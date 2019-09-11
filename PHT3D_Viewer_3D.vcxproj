@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EE01EE1-A2EB-4B68-B479-8BA31D7EB850}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)WTL\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)WTL\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)WTL\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)WTL\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);WIN32;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)boost;D:\Programming\OpenVR\openvr\headers;D:\Programming\VTK\VTK-8.2.0\x86static\Charts\Core;D:\Programming\VTK\VTK-8.2.0\Charts\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Color;D:\Programming\VTK\VTK-8.2.0\Common\Color;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Core;D:\Programming\VTK\VTK-8.2.0\Common\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Utilities\KWIML;D:\Programming\VTK\VTK-8.2.0\Utilities\KWIML;D:\Programming\VTK\VTK-8.2.0\Utilities\KWSys;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\utf8;D:\Programming\VTK\VTK-8.2.0\ThirdParty\utf8;D:\Programming\VTK\VTK-8.2.0\x86static\Common\DataModel;D:\Programming\VTK\VTK-8.2.0\Common\DataModel;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Math;D:\Programming\VTK\VTK-8.2.0\Common\Math;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Misc;D:\Programming\VTK\VTK-8.2.0\Common\Misc;D:\Programming\VTK\VTK-8.2.0\x86static\Common\System;D:\Programming\VTK\VTK-8.2.0\Common\System;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Transforms;D:\Programming\VTK\VTK-8.2.0\Common\Transforms;D:\Programming\VTK\VTK-8.2.0\x86static\Interaction\Widgets;D:\Programming\VTK\VTK-8.2.0\Interaction\Widgets;D:\Programming\VTK\VTK-8.2.0\x86static\IO\XML;D:\Programming\VTK\VTK-8.2.0\IO\XML;D:\Programming\VTK\VTK-8.2.0\x86static\Common\ExecutionModel;D:\Programming\VTK\VTK-8.2.0\Common\ExecutionModel;D:\Programming\VTK\VTK-8.2.0\x86static\IO\Core;D:\Programming\VTK\VTK-8.2.0\IO\Core;D:\Programming\VTK\VTK-8.2.0\Rendering\Annotation;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Annotation;D:\Programming\VTK\VTK-8.2.0\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\doubleconversion;D:\Programming\VTK\VTK-8.2.0\ThirdParty\doubleconversion;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lz4\vtklz4\lib;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lz4\vtklz4;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lz4;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lz4;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lzma;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lzma;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\zlib;D:\Programming\VTK\VTK-8.2.0\ThirdParty\zlib;D:\Programming\VTK\VTK-8.2.0\x86static\IO\XMLParser;D:\Programming\VTK\VTK-8.2.0\IO\XMLParser;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\expat;D:\Programming\VTK\VTK-8.2.0\ThirdParty\expat;D:\Programming\VTK\VTK-8.2.0\x86static\Interaction\Style;D:\Programming\VTK\VTK-8.2.0\Interaction\Style;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Extraction;D:\Programming\VTK\VTK-8.2.0\Filters\Extraction;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Core;D:\Programming\VTK\VTK-8.2.0\Filters\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\General;D:\Programming\VTK\VTK-8.2.0\Filters\General;D:\Programming\VTK\VTK-8.2.0\x86static\Common\ComputationalGeometry;D:\Programming\VTK\VTK-8.2.0\Common\ComputationalGeometry;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Statistics;D:\Programming\VTK\VTK-8.2.0\Filters\Statistics;D:\Programming\VTK\VTK-8.2.0\x86static\Imaging\Fourier;D:\Programming\VTK\VTK-8.2.0\Imaging\Fourier;D:\Programming\VTK\VTK-8.2.0\x86static\Imaging\Core;D:\Programming\VTK\VTK-8.2.0\Imaging\Core;D:\Programming\VTK\VTK-8.2.0\x86static\IO\Image;D:\Programming\VTK\VTK-8.2.0\IO\Image;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\eigen;D:\Programming\VTK\VTK-8.2.0\ThirdParty\eigen;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Sources;D:\Programming\VTK\VTK-8.2.0\Filters\Sources;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Context2D;D:\Programming\VTK\VTK-8.2.0\Rendering\Context2D;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Core;D:\Programming\VTK\VTK-8.2.0\Rendering\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Geometry;D:\Programming\VTK\VTK-8.2.0\Filters\Geometry;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\FreeType;D:\Programming\VTK\VTK-8.2.0\Rendering\FreeType;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\freetype;D:\Programming\VTK\VTK-8.2.0\ThirdParty\freetype;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\OpenGL2;D:\Programming\VTK\VTK-8.2.0\Rendering\OpenGL2;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\OpenVR;D:\Programming\VTK\VTK-8.2.0\Rendering\OpenVR;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Volume;D:\Programming\VTK\VTK-8.2.0\Rendering\Volume;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\VolumeOpenGL2;D:\Programming\VTK\VTK-8.2.0\Rendering\VolumeOpenGL2;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\glew;D:\Programming\VTK\VTK-8.2.0\ThirdParty\glew;D:\Programming\VTK\VTK-8.2.0\x86static\Utilities\KWSys;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\doubleconversion\vtkdoubleconversion;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>openvr_api.lib;Dbghelp.lib;vtkCommonColor-8.2.lib;vtkCommonComputationalGeometry-8.2.lib;vtkCommonCore-8.2.lib;vtkCommonDataModel-8.2.lib;vtkCommonExecutionModel-8.2.lib;vtkCommonMath-8.2.lib;vtkCommonMisc-8.2.lib;vtkCommonSystem-8.2.lib;vtkCommonTransforms-8.2.lib;vtkdoubleconversion-8.2.lib;vtkexpat-8.2.lib;vtkgl2ps-8.2.lib;vtkFiltersCore-8.2.lib;vtkFiltersExtraction-8.2.lib;vtkFiltersGeneral-8.2.lib;vtkFiltersGeometry-8.2.lib;vtkFiltersSources-8.2.lib;vtkFiltersStatistics-8.2.lib;vtkfreetype-8.2.lib;vtkglew-8.2.lib;vtkImagingCore-8.2.lib;vtkImagingFourier-8.2.lib;vtkImagingSources-8.2.lib;vtkInteractionStyle-8.2.lib;vtkInteractionWidgets-8.2.lib;vtkIOCore-8.2.lib;vtkIOImage-8.2.lib;vtkIOXML-8.2.lib;vtkIOXMLParser-8.2.lib;vtkjpeg-8.2.lib;vtklz4-8.2.lib;vtklzma-8.2.lib;vtkpng-8.2.lib;vtkRenderingAnnotation-8.2.lib;vtkRenderingCore-8.2.lib;vtkRenderingFreeType-8.2.lib;vtkRenderingGL2PSOpenGL2-8.2.lib;vtkRenderingOpenGL2-8.2.lib;vtkRenderingOpenVR-8.2.lib;vtkRenderingVolume-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtksys-8.2.lib;vtkzlib-8.2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Programming\OpenVR\openvr\bin\win32\$(Configuration);D:\Programming\VTK\VTK-8.2.0\x86static\lib\$(Configuration)</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>PHT3D_Viewer_3D.h</HeaderFileName>
+      <InterfaceIdentifierFileName>PHT3D_Viewer_3D_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>PHT3D_Viewer_3D_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/PHT3D_Viewer_3D.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+    <ProjectReference />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>PHT3D_Viewer_3D.h</HeaderFileName>
+      <InterfaceIdentifierFileName>PHT3D_Viewer_3D_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>PHT3D_Viewer_3D_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/PHT3D_Viewer_3D.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling />
+      <DebugInformationFormat />
+      <PreprocessorDefinitions>OPENVR_BUILD_STATIC;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);WIN32;_WINDOWS;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)boost;D:\Programming\OpenVR\openvr\headers;D:\Programming\VTK\VTK-8.2.0\x86static\Charts\Core;D:\Programming\VTK\VTK-8.2.0\Charts\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Color;D:\Programming\VTK\VTK-8.2.0\Common\Color;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Core;D:\Programming\VTK\VTK-8.2.0\Common\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Utilities\KWIML;D:\Programming\VTK\VTK-8.2.0\Utilities\KWIML;D:\Programming\VTK\VTK-8.2.0\Utilities\KWSys;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\utf8;D:\Programming\VTK\VTK-8.2.0\ThirdParty\utf8;D:\Programming\VTK\VTK-8.2.0\x86static\Common\DataModel;D:\Programming\VTK\VTK-8.2.0\Common\DataModel;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Math;D:\Programming\VTK\VTK-8.2.0\Common\Math;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Misc;D:\Programming\VTK\VTK-8.2.0\Common\Misc;D:\Programming\VTK\VTK-8.2.0\x86static\Common\System;D:\Programming\VTK\VTK-8.2.0\Common\System;D:\Programming\VTK\VTK-8.2.0\x86static\Common\Transforms;D:\Programming\VTK\VTK-8.2.0\Common\Transforms;D:\Programming\VTK\VTK-8.2.0\x86static\Interaction\Widgets;D:\Programming\VTK\VTK-8.2.0\Interaction\Widgets;D:\Programming\VTK\VTK-8.2.0\x86static\IO\XML;D:\Programming\VTK\VTK-8.2.0\IO\XML;D:\Programming\VTK\VTK-8.2.0\x86static\Common\ExecutionModel;D:\Programming\VTK\VTK-8.2.0\Common\ExecutionModel;D:\Programming\VTK\VTK-8.2.0\x86static\IO\Core;D:\Programming\VTK\VTK-8.2.0\IO\Core;D:\Programming\VTK\VTK-8.2.0\Rendering\Annotation;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Annotation;D:\Programming\VTK\VTK-8.2.0\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\doubleconversion;D:\Programming\VTK\VTK-8.2.0\ThirdParty\doubleconversion;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lz4\vtklz4\lib;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lz4\vtklz4;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lz4;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lz4;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\lzma;D:\Programming\VTK\VTK-8.2.0\ThirdParty\lzma;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\zlib;D:\Programming\VTK\VTK-8.2.0\ThirdParty\zlib;D:\Programming\VTK\VTK-8.2.0\x86static\IO\XMLParser;D:\Programming\VTK\VTK-8.2.0\IO\XMLParser;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\expat;D:\Programming\VTK\VTK-8.2.0\ThirdParty\expat;D:\Programming\VTK\VTK-8.2.0\x86static\Interaction\Style;D:\Programming\VTK\VTK-8.2.0\Interaction\Style;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Extraction;D:\Programming\VTK\VTK-8.2.0\Filters\Extraction;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Core;D:\Programming\VTK\VTK-8.2.0\Filters\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\General;D:\Programming\VTK\VTK-8.2.0\Filters\General;D:\Programming\VTK\VTK-8.2.0\x86static\Common\ComputationalGeometry;D:\Programming\VTK\VTK-8.2.0\Common\ComputationalGeometry;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Statistics;D:\Programming\VTK\VTK-8.2.0\Filters\Statistics;D:\Programming\VTK\VTK-8.2.0\x86static\Imaging\Fourier;D:\Programming\VTK\VTK-8.2.0\Imaging\Fourier;D:\Programming\VTK\VTK-8.2.0\x86static\Imaging\Core;D:\Programming\VTK\VTK-8.2.0\Imaging\Core;D:\Programming\VTK\VTK-8.2.0\x86static\IO\Image;D:\Programming\VTK\VTK-8.2.0\IO\Image;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\eigen;D:\Programming\VTK\VTK-8.2.0\ThirdParty\eigen;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Sources;D:\Programming\VTK\VTK-8.2.0\Filters\Sources;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Context2D;D:\Programming\VTK\VTK-8.2.0\Rendering\Context2D;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Core;D:\Programming\VTK\VTK-8.2.0\Rendering\Core;D:\Programming\VTK\VTK-8.2.0\x86static\Filters\Geometry;D:\Programming\VTK\VTK-8.2.0\Filters\Geometry;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\FreeType;D:\Programming\VTK\VTK-8.2.0\Rendering\FreeType;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\freetype;D:\Programming\VTK\VTK-8.2.0\ThirdParty\freetype;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\OpenGL2;D:\Programming\VTK\VTK-8.2.0\Rendering\OpenGL2;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\OpenVR;D:\Programming\VTK\VTK-8.2.0\Rendering\OpenVR;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\Volume;D:\Programming\VTK\VTK-8.2.0\Rendering\Volume;D:\Programming\VTK\VTK-8.2.0\x86static\Rendering\VolumeOpenGL2;D:\Programming\VTK\VTK-8.2.0\Rendering\VolumeOpenGL2;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\glew;D:\Programming\VTK\VTK-8.2.0\ThirdParty\glew;D:\Programming\VTK\VTK-8.2.0\x86static\Utilities\KWSys;D:\Programming\VTK\VTK-8.2.0\x86static\ThirdParty\doubleconversion\vtkdoubleconversion;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>openvr_api.lib;Dbghelp.lib;vtkCommonColor-8.2.lib;vtkCommonComputationalGeometry-8.2.lib;vtkCommonCore-8.2.lib;vtkCommonDataModel-8.2.lib;vtkCommonExecutionModel-8.2.lib;vtkCommonMath-8.2.lib;vtkCommonMisc-8.2.lib;vtkCommonSystem-8.2.lib;vtkCommonTransforms-8.2.lib;vtkdoubleconversion-8.2.lib;vtkexpat-8.2.lib;vtkgl2ps-8.2.lib;vtkFiltersCore-8.2.lib;vtkFiltersExtraction-8.2.lib;vtkFiltersGeneral-8.2.lib;vtkFiltersGeometry-8.2.lib;vtkFiltersSources-8.2.lib;vtkFiltersStatistics-8.2.lib;vtkfreetype-8.2.lib;vtkglew-8.2.lib;vtkImagingCore-8.2.lib;vtkImagingFourier-8.2.lib;vtkImagingSources-8.2.lib;vtkInteractionStyle-8.2.lib;vtkInteractionWidgets-8.2.lib;vtkIOCore-8.2.lib;vtkIOImage-8.2.lib;vtkIOXML-8.2.lib;vtkIOXMLParser-8.2.lib;vtkjpeg-8.2.lib;vtklz4-8.2.lib;vtklzma-8.2.lib;vtkpng-8.2.lib;vtkRenderingAnnotation-8.2.lib;vtkRenderingCore-8.2.lib;vtkRenderingFreeType-8.2.lib;vtkRenderingGL2PSOpenGL2-8.2.lib;vtkRenderingOpenGL2-8.2.lib;vtkRenderingOpenVR-8.2.lib;vtkRenderingVolume-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtksys-8.2.lib;vtkzlib-8.2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Programming\OpenVR\openvr\bin\win32\$(Configuration);D:\Programming\VTK\VTK-8.2.0\x86static\lib\$(Configuration)</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>PHT3D_Viewer_3D.h</HeaderFileName>
+      <InterfaceIdentifierFileName>PHT3D_Viewer_3D_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>PHT3D_Viewer_3D_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/PHT3D_Viewer_3D.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ExceptionHandling />
+      <DebugInformationFormat />
+      <PreprocessorDefinitions>_WINDOWS;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName>PHT3D_Viewer_3D.h</HeaderFileName>
+      <InterfaceIdentifierFileName>PHT3D_Viewer_3D_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>PHT3D_Viewer_3D_p.c</ProxyFileName>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)/PHT3D_Viewer_3D.tlb</TypeLibraryName>
+      <DllDataFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="ModelRead.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="View.cpp" />
+    <ClCompile Include="VTK_Operation.cpp" />
+    <ClCompile Include="PHT3D_Viewer_3D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="atlwfile.h" />
+    <ClInclude Include="CPPMatrix2.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="ModelRead.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="View.h" />
+    <ClInclude Include="VTK_Operation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PHT3D_Viewer_3D.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\toolbar.bmp" />
+    <Image Include="res\PHT3D_Viewer_3D.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

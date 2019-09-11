@@ -1,0 +1,64 @@
+# Folders
+Backup/
+[Dd]ebug/
+Debug/
+![Rr]elease/PHT3D_Viewer_3D.exe
+Example3/
+*.tlog/
+x64/
+.vs/
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Debug 
+*.pdb
+
+# Prerequisites
+*.d
+
+# Log Files
+*.log
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.res
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.out
+*.app
