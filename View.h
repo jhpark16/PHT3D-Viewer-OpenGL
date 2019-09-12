@@ -84,6 +84,6 @@ private:
   BOOL disableActivateApp;
   BOOL m_bClockRunning;
   SYSTEMTIME m_stLastTime;
-  VTK_Operation* pvtkDemo;
+//  VTK_Operation* pvtkDemo;
   HWND m_hWndParent;
 };

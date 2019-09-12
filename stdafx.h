@@ -73,7 +73,6 @@ typedef boost::multi_array<double, 4> ArrayD4D;
 
 #include "CPPMatrix2.h"
 #include "ModelRead.h"
-#include "VTK_Operation.h"
 
 #if defined _M_IX86
   #pragma comment(linker, "/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")

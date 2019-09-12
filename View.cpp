@@ -30,7 +30,7 @@ LRESULT CView::OnPaint(UINT /*uMsg*/, WPARAM hdc, LPARAM /*lParam*/, BOOL& /*bHa
   RECT rc;
   GetClientRect(&rc);
 
-  pvtkDemo->Render();
+  //pvtkDemo->Render();
   SetMsgHandled(TRUE);
 
 	return 0;
@@ -87,8 +87,8 @@ LRESULT CView::OnCreate(LPCREATESTRUCT lParam)
   //		SetTimer(1, 1);
   //bInitialized = false;
   m_bClockRunning = TRUE;
-  pvtkDemo = new VTK_Operation(m_hWnd, m_hWndParent);
-  pvtkDemo->WidgetInteractiveOff();
+  //pvtkDemo = new VTK_Operation(m_hWnd, m_hWndParent);
+  //pvtkDemo->WidgetInteractiveOff();
   //pvtkDemo->StepObjects(0);
   SetMsgHandled(FALSE);
   //bInitialized = true;
@@ -99,8 +99,8 @@ void CView::OnDestroy()
 {
   ATLTRACE("OnDestroy\n");
   KillTimer(1);
-  delete pvtkDemo;
-  pvtkDemo = nullptr;
+  //delete pvtkDemo;
+  //pvtkDemo = nullptr;
   PostQuitMessage(0);
   SetMsgHandled(FALSE);
 }
@@ -109,7 +109,7 @@ LRESULT CView::OnSize(UINT uMsg, CSize size)
 {
 //  if (true || bInitialized) {
     ATLTRACE("OnSize\n");
-    if (pvtkDemo) pvtkDemo->OnSize(size);
+    //if (pvtkDemo) pvtkDemo->OnSize(size);
     Invalidate();
     SetMsgHandled(TRUE);
 //  }
@@ -171,8 +171,8 @@ void CView::OnTimer(UINT uTimerID, TIMERPROC pTimerProc)
       ATLTRACE("OnTimer: m_bClockRunning = %d\n", m_bClockRunning);
       SetMsgHandled(FALSE);
       GetLocalTime(&m_stLastTime);
-      pvtkDemo->OnTimer(m_hWnd, uTimerID);
-      pvtkDemo->StepObjects(m_stLastTime.wSecond);
+      //pvtkDemo->OnTimer(m_hWnd, uTimerID);
+      //pvtkDemo->StepObjects(m_stLastTime.wSecond);
       RedrawWindow();
     }
   }
@@ -180,8 +180,8 @@ void CView::OnTimer(UINT uTimerID, TIMERPROC pTimerProc)
 
 void CView::StepDemo(int step)
 {
-  pvtkDemo->OnTimer(m_hWnd, step);
-  pvtkDemo->StepObjects(m_stLastTime.wSecond);
+  //pvtkDemo->OnTimer(m_hWnd, step);
+  //pvtkDemo->StepObjects(m_stLastTime.wSecond);
   RedrawWindow();
 }
 
@@ -201,58 +201,58 @@ void CView::StopClock()
 void CView::OnLButtonDblClk(UINT uMsg, CPoint point)
 {
   //		ATLTRACE("OnLButtonDblClk: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
+  //pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
 }
 
 void CView::OnLButtonDown(UINT uMsg, CPoint point)
 {
   //		SetFocus();
   //		ATLTRACE("view::OnLButtonDown: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
+  //pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
 }
 
 void CView::OnMButtonDown(UINT uMsg, CPoint point)
 {
   //		SetFocus();
   //		ATLTRACE("view::OnMButtonDown: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnMButtonDown(m_hWnd, uMsg, point);
+  //pvtkDemo->OnMButtonDown(m_hWnd, uMsg, point);
 }
 
 void CView::OnRButtonDown(UINT uMsg, CPoint point)
 {
   //		SetFocus();
   //		ATLTRACE("view::OnRButtonDown: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnRButtonDown(m_hWnd, uMsg, point);
+  //pvtkDemo->OnRButtonDown(m_hWnd, uMsg, point);
 }
 
 void CView::OnLButtonUp(UINT uMsg, CPoint point)
 {
   //		ATLTRACE("view::OnLButtonUp: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnLButtonUp(m_hWnd, uMsg, point);
+  //pvtkDemo->OnLButtonUp(m_hWnd, uMsg, point);
 }
 
 void CView::OnMButtonUp(UINT uMsg, CPoint point)
 {
   //		ATLTRACE("view::OnMButtonUp: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnMButtonUp(m_hWnd, uMsg, point);
+  //pvtkDemo->OnMButtonUp(m_hWnd, uMsg, point);
 }
 
 void CView::OnRButtonUp(UINT uMsg, CPoint point)
 {
   //		ATLTRACE("view::OnRButtonUp: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnRButtonUp(m_hWnd, uMsg, point);
+  //pvtkDemo->OnRButtonUp(m_hWnd, uMsg, point);
 }
 
 void CView::OnMouseMove(UINT uMsg, CPoint point)
 {
   //		ATLTRACE("view::OnMouseMove: %d, %d, %d\n", uMsg, point.x, point.y);
-  pvtkDemo->OnMouseMove(m_hWnd, uMsg, point);
+  //pvtkDemo->OnMouseMove(m_hWnd, uMsg, point);
 }
 
 LRESULT CView::OnChar(UINT uMsg, WPARAM charCode, LPARAM lParam, BOOL& bHandled)
 {
   // lower 16 bits of lParma is the repeat count.
-  pvtkDemo->OnChar(m_hWnd, charCode, lParam & 0xFFFF, NULL);
+  //pvtkDemo->OnChar(m_hWnd, charCode, lParam & 0xFFFF, NULL);
   return 0;
 }
 
@@ -278,7 +278,7 @@ void CView::ResetModelData()
 LRESULT CView::OnFileNew(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
   // TODO: add code to initialize document
-  pvtkDemo->FileNew();
+  //pvtkDemo->FileNew();
   return 0;
 }
 
@@ -300,7 +300,7 @@ LRESULT CView::OnFileOpen(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, 
   if (fileDlg.DoModal() == IDOK)
   {
     mPHT3DM.sSelectedFile = fileDlg.m_szFileName;
-    pvtkDemo->FileOpen(mPHT3DM, fileDlg.m_szFileName);
+    //pvtkDemo->FileOpen(mPHT3DM, fileDlg.m_szFileName);
   }
   return 0;
 }

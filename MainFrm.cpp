@@ -67,7 +67,7 @@ LRESULT CMainFrame::OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/
   m_StatusBar.SetPaneIcon(IDR_TIME, AtlLoadIconImage(IDR_TIME, LR_DEFAULTCOLOR));
   // set the status bar pane text
   TCHAR szBuffer[100];
-  wsprintf(szBuffer, _T("CTRL-F toggles full screen mode."), 0);
+  wsprintf(szBuffer, _T("Message"), 0);
   m_StatusBar.SetPaneText(ID_DEFAULT_PANE, szBuffer);
 
   // initialize date/time and start a 1 second timer
