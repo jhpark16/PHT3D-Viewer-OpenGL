@@ -8,10 +8,34 @@
 
 #pragma once
 
+// Include GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include "Camera.h"
+#include "Light.h"
+#include "Shader.h"
+
 class CView : public CWindowImpl<CView>//, public VTK_Operation
 {
 public:
 	DECLARE_WND_CLASS(NULL)
+
+  HGLRC m_hRC;			// Handle to RC
+  Camera camera;
+  Light mainLight;
+  glm::mat4 projection;
+  GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0,
+    uniformAmbientColour = 0, uniformDirection = 0, uniformDiffuseIntensity = 0,
+    uniformVColourFrac = 0;
+  GLfloat fFovy = 45.0f; // Field-of-view
+  GLfloat fZNear = 0.1f;  // Near clipping plane
+  GLfloat fZFar = 100.0f;  // Far clipping plane
+  GLfloat fAspect = 1.25;
+  LARGE_INTEGER start;
+  LARGE_INTEGER frequency;
+
 
 	BOOL PreTranslateMessage(MSG* pMsg);
 
@@ -72,10 +96,17 @@ public:
   void OnMButtonUp(UINT uMsg, CPoint point);
   void OnRButtonUp(UINT uMsg, CPoint point);
   void OnMouseMove(UINT uMsg, CPoint point);
+
+  void OnInit(void);
+  void OnRender(void);
+  void OnResize(int cx, int cy);
   LRESULT OnChar(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
   LRESULT OnKeyDown(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
   LRESULT OnKeyUp(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
   void ResetModelData();
+  void CreateObjects();
+  void Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfloat *&vertices,
+    unsigned int &nVertices, unsigned int nDataPerTri);
   PHT3D_Model& GetPHT3DM(void); 
 
 private:
@@ -87,3 +118,9 @@ private:
 //  VTK_Operation* pvtkDemo;
   HWND m_hWndParent;
 };
+
+void CalcAverageNormals(unsigned int *indices, unsigned int indiceCount, GLfloat *vertices,
+  unsigned int verticeCount, unsigned int vLength, unsigned int normalOffset);
+
+void RenderText(Shader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
+

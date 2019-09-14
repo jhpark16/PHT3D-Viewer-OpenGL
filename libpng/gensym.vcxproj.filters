@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\b861c03f8585b35cea27c4127e145475\pnglibconf.c.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\b861c03f8585b35cea27c4127e145475\pnglibconf.out.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\b861c03f8585b35cea27c4127e145475\pnglibconf.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\1fe287af72891a0b6390fea69218a7af\sym.out.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\b861c03f8585b35cea27c4127e145475\libpng.sym.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\83dd5d6d85ec0985393d049cdd7e1dde\gensym.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Programming\libpng\libpng1.6.37\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Programming\libpng\libpng1.6.37\CMakeFiles\gensym" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E970307D-7F31-3F10-87C1-71777DA96516}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

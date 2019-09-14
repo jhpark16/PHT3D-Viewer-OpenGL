@@ -1204,6 +1204,7 @@ public:
   MT3DMSClass MT3DMS;
   MODFLOWClass MODFLOW;
   PLOTClass PLOT;
+  float Xmin, Xmax, Ymin, Ymax, Zmin, Zmax;
 
   PHT3D_Model()
   {

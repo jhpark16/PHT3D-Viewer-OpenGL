@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{48785542-36E0-3E72-81EE-DD46A91C4470}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm" "-BD:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/x86static" --check-stamp-file "D:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/x86static/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\CMakePackageConfigHelpers.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\GNUInstallDirs.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glm.pc.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glmBuildConfig.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glmConfig.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake_uninstall.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeCXXCompiler.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeRCCompiler.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm" "-BD:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/x86static" --check-stamp-file "D:/Programming/OpenGL/Computer Graphics with Modern OpenGL and C++/external/glm/x86static/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.15\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\WriteBasicConfigVersionFile.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\CMakePackageConfigHelpers.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\GNUInstallDirs.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glm.pc.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glmBuildConfig.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake\glmConfig.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\cmake_uninstall.cmake.in;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeCXXCompiler.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeRCCompiler.cmake;D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\3.15.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\ZERO_CHECK.vcxproj">
+      <Project>{6835321C-F752-3E90-BB04-C85B5034F790}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\glm\glm_static.vcxproj">
+      <Project>{1B6C4B03-1C5C-3F2A-AF7C-5C7550F2C9DE}</Project>
+      <Name>glm_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\bug\test-bug_ms_vec_static.vcxproj">
+      <Project>{F2DABFDD-83A7-37C6-BF74-5EC4A37EE3F4}</Project>
+      <Name>test-bug_ms_vec_static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_cpp_constexpr.vcxproj">
+      <Project>{653BB714-9BF8-36E7-9091-EDBF0B215C25}</Project>
+      <Name>test-core_cpp_constexpr</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_cpp_defaulted_ctor.vcxproj">
+      <Project>{5907AC76-E195-3963-99BD-47061CD3A84D}</Project>
+      <Name>test-core_cpp_defaulted_ctor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_aligned_gentypes.vcxproj">
+      <Project>{7ED01568-0A4C-3417-9C42-EC6C7565CA32}</Project>
+      <Name>test-core_force_aligned_gentypes</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_ctor_init.vcxproj">
+      <Project>{DF466C3B-B902-38D4-94F0-2FD03406539A}</Project>
+      <Name>test-core_force_ctor_init</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_explicit_ctor.vcxproj">
+      <Project>{2CEB2561-232A-3140-81F5-69C0815FC17D}</Project>
+      <Name>test-core_force_explicit_ctor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_inline.vcxproj">
+      <Project>{4E376C90-2B62-3751-8B37-9623A768C316}</Project>
+      <Name>test-core_force_inline</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_pure.vcxproj">
+      <Project>{4EFFD441-F4BA-3C26-A923-6CEFBA338E42}</Project>
+      <Name>test-core_force_pure</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_unrestricted_gentype.vcxproj">
+      <Project>{C5299A07-A988-3CC3-BA7B-646CF43D8E67}</Project>
+      <Name>test-core_force_unrestricted_gentype</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_force_xyzw_only.vcxproj">
+      <Project>{07B74CC8-8380-32E6-BD86-8ED36D63C7E4}</Project>
+      <Name>test-core_force_xyzw_only</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_common.vcxproj">
+      <Project>{5B68E7B1-6E76-3604-8103-AC881A79ACFF}</Project>
+      <Name>test-core_func_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_exponential.vcxproj">
+      <Project>{23EE72A0-320E-37AF-B007-CE1B86FE4B4B}</Project>
+      <Name>test-core_func_exponential</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_geometric.vcxproj">
+      <Project>{0AACD390-665C-39B2-85C1-6014FDDCA3D7}</Project>
+      <Name>test-core_func_geometric</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_integer.vcxproj">
+      <Project>{8DADE1BE-33E4-305D-8ED0-3614B21BC1CD}</Project>
+      <Name>test-core_func_integer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_integer_bit_count.vcxproj">
+      <Project>{42BDB6AC-634B-3D31-A13A-9A441CF1BC50}</Project>
+      <Name>test-core_func_integer_bit_count</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_integer_find_lsb.vcxproj">
+      <Project>{178516DA-FAAC-35A8-A59D-9A33BE5F28F6}</Project>
+      <Name>test-core_func_integer_find_lsb</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_integer_find_msb.vcxproj">
+      <Project>{5C1FD10E-CD63-30F6-BC3E-5F79F35FAF4E}</Project>
+      <Name>test-core_func_integer_find_msb</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_matrix.vcxproj">
+      <Project>{3B09E674-A681-3863-926D-5702310FC2A3}</Project>
+      <Name>test-core_func_matrix</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_noise.vcxproj">
+      <Project>{C47BD1A6-D18C-3026-AEB3-977EB87B6654}</Project>
+      <Name>test-core_func_noise</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_packing.vcxproj">
+      <Project>{8FCD2660-B79F-3F53-B741-0D341EF570BC}</Project>
+      <Name>test-core_func_packing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_swizzle.vcxproj">
+      <Project>{B1D15266-08C9-301C-B8D3-18ADED8A4B79}</Project>
+      <Name>test-core_func_swizzle</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_trigonometric.vcxproj">
+      <Project>{7A7E3B94-F846-326D-8B6E-5F739737F05A}</Project>
+      <Name>test-core_func_trigonometric</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_func_vector_relational.vcxproj">
+      <Project>{E6DDA9EF-7742-3C4A-83F6-BF7E421E9B75}</Project>
+      <Name>test-core_func_vector_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_setup_force_cxx98.vcxproj">
+      <Project>{DB7BC9A1-F671-339E-9053-F649502DCE4E}</Project>
+      <Name>test-core_setup_force_cxx98</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_setup_force_size_t_length.vcxproj">
+      <Project>{49CD2C75-7499-3657-92EB-CC70F4DCA223}</Project>
+      <Name>test-core_setup_force_size_t_length</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_setup_message.vcxproj">
+      <Project>{6406F0E0-49A0-3BD3-A166-DC98A2B6C57A}</Project>
+      <Name>test-core_setup_message</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_setup_platform_unknown.vcxproj">
+      <Project>{95E212C4-435E-3AB2-9A9B-4973BB893AE5}</Project>
+      <Name>test-core_setup_platform_unknown</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_setup_precision.vcxproj">
+      <Project>{6940DC52-07BD-3CE3-BBB9-2E3CADC59345}</Project>
+      <Name>test-core_setup_precision</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_aligned.vcxproj">
+      <Project>{6BAFD3A0-2372-3AD2-B2C4-3198D5017FA3}</Project>
+      <Name>test-core_type_aligned</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_cast.vcxproj">
+      <Project>{FAFAF664-4E8E-3741-ACEE-2795741618B6}</Project>
+      <Name>test-core_type_cast</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_ctor.vcxproj">
+      <Project>{6BB7995A-1A94-3584-B639-21917E40B51A}</Project>
+      <Name>test-core_type_ctor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_int.vcxproj">
+      <Project>{8C06CC95-29AF-3739-980E-E2436E5C251B}</Project>
+      <Name>test-core_type_int</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_length.vcxproj">
+      <Project>{B52B3241-DD79-3557-8022-88DBC8B45B19}</Project>
+      <Name>test-core_type_length</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat2x2.vcxproj">
+      <Project>{5F8AF30A-255B-343C-87D3-D152B7266D19}</Project>
+      <Name>test-core_type_mat2x2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat2x3.vcxproj">
+      <Project>{1DA67D11-3E64-342B-96E7-4243647103D1}</Project>
+      <Name>test-core_type_mat2x3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat2x4.vcxproj">
+      <Project>{957C2C1B-1B71-38BD-9594-ACB4FB7E6531}</Project>
+      <Name>test-core_type_mat2x4</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat3x2.vcxproj">
+      <Project>{B7463B7C-BFFC-3937-B72C-B2050C2B3846}</Project>
+      <Name>test-core_type_mat3x2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat3x3.vcxproj">
+      <Project>{4E1B9267-DC21-33B9-B011-1E3C1910EB74}</Project>
+      <Name>test-core_type_mat3x3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat3x4.vcxproj">
+      <Project>{6F11E568-B7AA-3AB0-9483-F85711C7D799}</Project>
+      <Name>test-core_type_mat3x4</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat4x2.vcxproj">
+      <Project>{7B8836F7-0637-3F7A-BA56-F7F8C9099EE5}</Project>
+      <Name>test-core_type_mat4x2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat4x3.vcxproj">
+      <Project>{9B9228D5-55B3-3BAB-8FA8-C3B119B322E7}</Project>
+      <Name>test-core_type_mat4x3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_mat4x4.vcxproj">
+      <Project>{3A619AF6-618E-3583-BD78-1958860FE252}</Project>
+      <Name>test-core_type_mat4x4</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_vec1.vcxproj">
+      <Project>{1D659AFC-2BCC-34ED-BA61-895F81AE1C29}</Project>
+      <Name>test-core_type_vec1</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_vec2.vcxproj">
+      <Project>{05465AE3-8677-3BE5-85BC-7D2F7D1919B0}</Project>
+      <Name>test-core_type_vec2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_vec3.vcxproj">
+      <Project>{2E02DB12-8A5A-320D-B7E9-FDC884E85C8C}</Project>
+      <Name>test-core_type_vec3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\core\test-core_type_vec4.vcxproj">
+      <Project>{EB4E0FD6-071B-3310-88A1-4B64DC4A67BC}</Project>
+      <Name>test-core_type_vec4</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_matrix_common.vcxproj">
+      <Project>{897F8CD6-DBC9-3E9B-9EA7-3910B0CEB313}</Project>
+      <Name>test-ext_matrix_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_matrix_relational.vcxproj">
+      <Project>{A3BCB5F4-9F12-3201-B5C0-9198D1E35E01}</Project>
+      <Name>test-ext_matrix_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_matrix_transform.vcxproj">
+      <Project>{61EA0402-24E9-31DF-8CFF-82B4FF504ABB}</Project>
+      <Name>test-ext_matrix_transform</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_common.vcxproj">
+      <Project>{B8EF1DDB-0452-3004-85E5-8083A8156AD7}</Project>
+      <Name>test-ext_quaternion_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_exponential.vcxproj">
+      <Project>{B79FC3BF-6660-3204-AEC2-B33D948E29CB}</Project>
+      <Name>test-ext_quaternion_exponential</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_geometric.vcxproj">
+      <Project>{D0D2EAA1-2479-333C-B751-2FEA87FB0D1E}</Project>
+      <Name>test-ext_quaternion_geometric</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_relational.vcxproj">
+      <Project>{388D9917-BD62-334D-B844-DF36836D12CE}</Project>
+      <Name>test-ext_quaternion_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_transform.vcxproj">
+      <Project>{450A2EF7-4D9D-3061-9E91-6F7C99C4665C}</Project>
+      <Name>test-ext_quaternion_transform</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_trigonometric.vcxproj">
+      <Project>{FBFD2C41-E889-3960-BBBE-4B67184B855D}</Project>
+      <Name>test-ext_quaternion_trigonometric</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_quaternion_type.vcxproj">
+      <Project>{F05F0034-AE14-3E9B-B0F4-327FAF59A5D8}</Project>
+      <Name>test-ext_quaternion_type</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_common.vcxproj">
+      <Project>{6A1445F5-AE5D-31F8-BE88-64CA2E646CD7}</Project>
+      <Name>test-ext_scalar_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_constants.vcxproj">
+      <Project>{7FF956FB-6EAE-3A38-BF7E-43247DE7567E}</Project>
+      <Name>test-ext_scalar_constants</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_int_sized.vcxproj">
+      <Project>{2C9D11F5-8A71-38F1-9BEB-CB83E8F408F7}</Project>
+      <Name>test-ext_scalar_int_sized</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_relational.vcxproj">
+      <Project>{DCA20489-7FD4-30D0-92DC-EB009D0B1FA8}</Project>
+      <Name>test-ext_scalar_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_uint_sized.vcxproj">
+      <Project>{F1E6D027-E85C-333E-B34D-15CFF096B8E3}</Project>
+      <Name>test-ext_scalar_uint_sized</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_scalar_ulp.vcxproj">
+      <Project>{84A419E8-8B6D-3F9D-B982-AE8028C582D7}</Project>
+      <Name>test-ext_scalar_ulp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vec1.vcxproj">
+      <Project>{852B7ED4-CCE0-350A-82FD-45728FCE7D39}</Project>
+      <Name>test-ext_vec1</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_bool1.vcxproj">
+      <Project>{594ADA61-9396-3B16-B4DC-9A76A4F6718A}</Project>
+      <Name>test-ext_vector_bool1</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_common.vcxproj">
+      <Project>{C4381177-460D-3DE7-BE2E-083BAC5755B1}</Project>
+      <Name>test-ext_vector_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_iec559.vcxproj">
+      <Project>{436DBD0F-F7AA-399F-B3FD-D41D133115B5}</Project>
+      <Name>test-ext_vector_iec559</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_integer.vcxproj">
+      <Project>{8728A180-59C1-3F2C-BEA3-530A34C325FA}</Project>
+      <Name>test-ext_vector_integer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_relational.vcxproj">
+      <Project>{10A5EE03-1960-3648-90B0-1D09B6B57DAF}</Project>
+      <Name>test-ext_vector_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\ext\test-ext_vector_ulp.vcxproj">
+      <Project>{C02A6337-E904-3191-A9B3-5B15503F4D02}</Project>
+      <Name>test-ext_vector_ulp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_bitfield.vcxproj">
+      <Project>{D98AE4E6-03E7-3122-81BB-B0512411E777}</Project>
+      <Name>test-gtc_bitfield</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_color_space.vcxproj">
+      <Project>{25C25776-DB01-35E5-B664-8D03B5724695}</Project>
+      <Name>test-gtc_color_space</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_constants.vcxproj">
+      <Project>{86F1F1E4-A02C-3F46-AE6A-1987927722EC}</Project>
+      <Name>test-gtc_constants</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_epsilon.vcxproj">
+      <Project>{32BF0790-0A64-3356-B23B-E87C6177F024}</Project>
+      <Name>test-gtc_epsilon</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_integer.vcxproj">
+      <Project>{EE4C7ECD-C768-39A9-A04E-A38BDC1F0937}</Project>
+      <Name>test-gtc_integer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_matrix_access.vcxproj">
+      <Project>{AC1FE6D1-119E-3DE6-B50E-12BB806A7B1B}</Project>
+      <Name>test-gtc_matrix_access</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_matrix_integer.vcxproj">
+      <Project>{3D845564-E58F-37A0-AEFC-6942CB6C9A58}</Project>
+      <Name>test-gtc_matrix_integer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_matrix_inverse.vcxproj">
+      <Project>{09583710-301A-329E-8554-EE3F45252151}</Project>
+      <Name>test-gtc_matrix_inverse</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_matrix_transform.vcxproj">
+      <Project>{6587190D-C166-399A-BF10-E4B2E302606B}</Project>
+      <Name>test-gtc_matrix_transform</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_noise.vcxproj">
+      <Project>{5CB305B2-7123-3F55-AF37-5FD7F6AECDC7}</Project>
+      <Name>test-gtc_noise</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_packing.vcxproj">
+      <Project>{D45887B3-2972-3709-A6C9-116631BFCC13}</Project>
+      <Name>test-gtc_packing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_quaternion.vcxproj">
+      <Project>{965C7640-82E5-3110-A9CA-6AD2BD9B776D}</Project>
+      <Name>test-gtc_quaternion</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_random.vcxproj">
+      <Project>{973407D9-BD4B-3DE7-B332-237355C07C88}</Project>
+      <Name>test-gtc_random</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_reciprocal.vcxproj">
+      <Project>{08617F5E-1ADD-313B-B974-F319ADEB8F74}</Project>
+      <Name>test-gtc_reciprocal</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_round.vcxproj">
+      <Project>{874AE2EB-ABC7-3848-A0F9-A64883EB5341}</Project>
+      <Name>test-gtc_round</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_type_aligned.vcxproj">
+      <Project>{B8AC8A6D-26C6-3600-B182-5B1F47093C0F}</Project>
+      <Name>test-gtc_type_aligned</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_type_precision.vcxproj">
+      <Project>{52EC59CB-8496-30A5-BB5B-82DA3C8745FB}</Project>
+      <Name>test-gtc_type_precision</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_type_ptr.vcxproj">
+      <Project>{27E8CFDC-53DC-313B-8F80-EA14C7DD257F}</Project>
+      <Name>test-gtc_type_ptr</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_ulp.vcxproj">
+      <Project>{522CDBF1-0D4A-35A7-A40E-5A6086A21399}</Project>
+      <Name>test-gtc_ulp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtc\test-gtc_vec1.vcxproj">
+      <Project>{2BA1D438-5B10-3AAE-81C7-C4126AAC1CB4}</Project>
+      <Name>test-gtc_vec1</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx.vcxproj">
+      <Project>{377DC0DA-3E63-3897-8D1C-5435C3A843F6}</Project>
+      <Name>test-gtx</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_associated_min_max.vcxproj">
+      <Project>{27F2CF3E-93BE-31B2-A27B-1C8B316BE0D9}</Project>
+      <Name>test-gtx_associated_min_max</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_closest_point.vcxproj">
+      <Project>{7AABBD0B-349F-3CCC-9E0A-14DE5417A798}</Project>
+      <Name>test-gtx_closest_point</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_color_encoding.vcxproj">
+      <Project>{863AF107-9922-3002-8105-42B961308462}</Project>
+      <Name>test-gtx_color_encoding</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_color_space.vcxproj">
+      <Project>{F13455A6-6B82-393D-A015-9F7DE8707321}</Project>
+      <Name>test-gtx_color_space</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_color_space_YCoCg.vcxproj">
+      <Project>{30B8973C-E85D-3AB7-BF86-4410A2A0C34B}</Project>
+      <Name>test-gtx_color_space_YCoCg</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_common.vcxproj">
+      <Project>{2978AEDE-F4E3-3E20-B526-5116DCDD27AC}</Project>
+      <Name>test-gtx_common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_compatibility.vcxproj">
+      <Project>{ACEEA728-8E51-36A1-BC7B-005FD37D06D2}</Project>
+      <Name>test-gtx_compatibility</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_component_wise.vcxproj">
+      <Project>{2A749900-ED55-3E2F-BDE6-1E0600A0F457}</Project>
+      <Name>test-gtx_component_wise</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_dual_quaternion.vcxproj">
+      <Project>{F040D465-CD68-3781-A9D1-B471B35F3BCE}</Project>
+      <Name>test-gtx_dual_quaternion</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_easing.vcxproj">
+      <Project>{164DE044-83C4-3BDE-9DD0-980DF2726EA2}</Project>
+      <Name>test-gtx_easing</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_euler_angle.vcxproj">
+      <Project>{D233672C-AB77-3A42-B04A-8BB084B1B4E1}</Project>
+      <Name>test-gtx_euler_angle</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_extend.vcxproj">
+      <Project>{68FA21C1-8CD3-3EDE-8112-171921C69F51}</Project>
+      <Name>test-gtx_extend</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_extended_min_max.vcxproj">
+      <Project>{666BCABE-7049-301A-AE89-2E0D9E758F14}</Project>
+      <Name>test-gtx_extended_min_max</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_exterior_product.vcxproj">
+      <Project>{7BD4B1BE-7984-3B6B-9343-2ACB38ECC2E9}</Project>
+      <Name>test-gtx_exterior_product</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_fast_exponential.vcxproj">
+      <Project>{1D105023-57E7-3DFB-8D9F-15EAFA496805}</Project>
+      <Name>test-gtx_fast_exponential</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_fast_square_root.vcxproj">
+      <Project>{DD772DE7-A0D7-3210-BCD0-3A4BC7DE4266}</Project>
+      <Name>test-gtx_fast_square_root</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_fast_trigonometry.vcxproj">
+      <Project>{F3BCDCC5-5907-3808-9324-E9CFEB5EF548}</Project>
+      <Name>test-gtx_fast_trigonometry</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_functions.vcxproj">
+      <Project>{96576F02-BD34-3438-9130-35C679215817}</Project>
+      <Name>test-gtx_functions</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_gradient_paint.vcxproj">
+      <Project>{2D3E4C6C-C208-3A82-8C91-A3D4D76501E1}</Project>
+      <Name>test-gtx_gradient_paint</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_handed_coordinate_space.vcxproj">
+      <Project>{EF5D4D59-4BC5-3D71-BCED-C180A3377FEA}</Project>
+      <Name>test-gtx_handed_coordinate_space</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_integer.vcxproj">
+      <Project>{EC5025BC-FDF6-3959-B90D-5A63297E0AD2}</Project>
+      <Name>test-gtx_integer</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_intersect.vcxproj">
+      <Project>{955D8CD4-0A6F-3635-A259-0AE87A78E3EA}</Project>
+      <Name>test-gtx_intersect</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_io.vcxproj">
+      <Project>{37621D77-BD5D-36AB-A803-5C288F2A7DD4}</Project>
+      <Name>test-gtx_io</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_load.vcxproj">
+      <Project>{CE248D69-9057-3D67-A294-A0B9F2096FC4}</Project>
+      <Name>test-gtx_load</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_log_base.vcxproj">
+      <Project>{56BE4D91-90C1-3CE4-A7B5-316D9DC6DD58}</Project>
+      <Name>test-gtx_log_base</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_cross_product.vcxproj">
+      <Project>{A91A3A94-BBA5-31F4-BD61-05A745D42A32}</Project>
+      <Name>test-gtx_matrix_cross_product</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_decompose.vcxproj">
+      <Project>{036B1F1A-87DF-347F-8FB3-B29157EE3A57}</Project>
+      <Name>test-gtx_matrix_decompose</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_factorisation.vcxproj">
+      <Project>{86B99215-2C1A-3BB9-B9BF-8B3EAC7CC9BD}</Project>
+      <Name>test-gtx_matrix_factorisation</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_interpolation.vcxproj">
+      <Project>{99E1F2FE-4265-3C8B-B118-91A19693B784}</Project>
+      <Name>test-gtx_matrix_interpolation</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_major_storage.vcxproj">
+      <Project>{DE4E1136-F488-365F-B26D-0AD9FC6CD9B0}</Project>
+      <Name>test-gtx_matrix_major_storage</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_operation.vcxproj">
+      <Project>{4E551CBE-9838-334A-9F4D-F77CF559E806}</Project>
+      <Name>test-gtx_matrix_operation</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_query.vcxproj">
+      <Project>{1D18528A-5DAF-3882-A981-99909B19A5DA}</Project>
+      <Name>test-gtx_matrix_query</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_matrix_transform_2d.vcxproj">
+      <Project>{9C61885F-91F3-3B99-BF4D-7AF40E283704}</Project>
+      <Name>test-gtx_matrix_transform_2d</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_norm.vcxproj">
+      <Project>{25985F8E-269A-335E-8932-B119BAF53E5C}</Project>
+      <Name>test-gtx_norm</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_normal.vcxproj">
+      <Project>{14724905-1F4A-3221-BF3E-E9303A15D321}</Project>
+      <Name>test-gtx_normal</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_normalize_dot.vcxproj">
+      <Project>{7D46F1C6-007B-3A07-B3D5-839F03CDCD38}</Project>
+      <Name>test-gtx_normalize_dot</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_number_precision.vcxproj">
+      <Project>{8EE8C352-B15E-3AEB-A70D-BCCBDD696774}</Project>
+      <Name>test-gtx_number_precision</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_optimum_pow.vcxproj">
+      <Project>{A5802BEB-1345-3189-AA1F-A39FB4593DD7}</Project>
+      <Name>test-gtx_optimum_pow</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_orthonormalize.vcxproj">
+      <Project>{8DE32F81-02BD-36AE-926A-B05048289355}</Project>
+      <Name>test-gtx_orthonormalize</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_perpendicular.vcxproj">
+      <Project>{42674DB1-BF44-3780-98FD-C0E03CD56796}</Project>
+      <Name>test-gtx_perpendicular</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_polar_coordinates.vcxproj">
+      <Project>{19282576-6C0E-3DF5-9329-A4EDE28D21EB}</Project>
+      <Name>test-gtx_polar_coordinates</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_projection.vcxproj">
+      <Project>{C9E8AF04-BFA6-3702-AEC9-C9A0ADBD3224}</Project>
+      <Name>test-gtx_projection</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_quaternion.vcxproj">
+      <Project>{58A7225B-B97A-38E0-9883-BAC9123B57C1}</Project>
+      <Name>test-gtx_quaternion</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_range.vcxproj">
+      <Project>{FFC64AE6-88DA-3545-83E2-96FA841067B2}</Project>
+      <Name>test-gtx_range</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_rotate_normalized_axis.vcxproj">
+      <Project>{360F2B96-2FC6-34F1-958F-F1E1148B444A}</Project>
+      <Name>test-gtx_rotate_normalized_axis</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_rotate_vector.vcxproj">
+      <Project>{2E1F3BBD-1943-324A-8273-51E34B142C7C}</Project>
+      <Name>test-gtx_rotate_vector</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_scalar_multiplication.vcxproj">
+      <Project>{F87C9A65-FF93-3C32-BE2A-02316A2F00B0}</Project>
+      <Name>test-gtx_scalar_multiplication</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_scalar_relational.vcxproj">
+      <Project>{4AC22482-3242-392D-8F75-3033C41A7B38}</Project>
+      <Name>test-gtx_scalar_relational</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_spline.vcxproj">
+      <Project>{FD597988-0D30-3145-8D9E-E1A086A80CFE}</Project>
+      <Name>test-gtx_spline</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_string_cast.vcxproj">
+      <Project>{83DA316A-33E7-3418-8275-7D23408E68E7}</Project>
+      <Name>test-gtx_string_cast</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_texture.vcxproj">
+      <Project>{78D9D8DF-30ED-34C5-985E-B6228A177562}</Project>
+      <Name>test-gtx_texture</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_type_aligned.vcxproj">
+      <Project>{358C30F1-F059-3004-9D5A-B8A1BEF6071F}</Project>
+      <Name>test-gtx_type_aligned</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_type_trait.vcxproj">
+      <Project>{5DA0E484-7A13-3849-B07D-5D178F315C00}</Project>
+      <Name>test-gtx_type_trait</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_vec_swizzle.vcxproj">
+      <Project>{4A9ABD97-3DD4-3FE5-8285-CF36A5C7E1E8}</Project>
+      <Name>test-gtx_vec_swizzle</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_vector_angle.vcxproj">
+      <Project>{09195038-47F7-3C45-9638-25EC6AF63D22}</Project>
+      <Name>test-gtx_vector_angle</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_vector_query.vcxproj">
+      <Project>{06882F58-D0EA-3B1C-92D2-BD6C71735BDD}</Project>
+      <Name>test-gtx_vector_query</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\gtx\test-gtx_wrap.vcxproj">
+      <Project>{CB4B27AB-5284-35C0-8BD6-C9D17C6F592C}</Project>
+      <Name>test-gtx_wrap</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_matrix_div.vcxproj">
+      <Project>{507AC9C6-82E9-3531-83D2-AA85BD0937BF}</Project>
+      <Name>test-perf_matrix_div</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_matrix_inverse.vcxproj">
+      <Project>{D7E1C2B4-406B-31E4-AB07-ACB9492B922D}</Project>
+      <Name>test-perf_matrix_inverse</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_matrix_mul.vcxproj">
+      <Project>{AB4FB985-789D-34D5-B19A-6C067FB0677B}</Project>
+      <Name>test-perf_matrix_mul</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_matrix_mul_vector.vcxproj">
+      <Project>{0CCFD154-F6EA-351E-A651-BEFF188D3F0E}</Project>
+      <Name>test-perf_matrix_mul_vector</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_matrix_transpose.vcxproj">
+      <Project>{BF6729D4-B97E-391A-92B1-769029930860}</Project>
+      <Name>test-perf_matrix_transpose</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\x86static\test\perf\test-perf_vector_mul_matrix.vcxproj">
+      <Project>{FB7AF437-05BF-3B6B-A66E-98BEE729CC5B}</Project>
+      <Name>test-perf_vector_mul_matrix</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

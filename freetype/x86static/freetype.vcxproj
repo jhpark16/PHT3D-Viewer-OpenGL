@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61809A0D-C8F9-3B87-9C8B-176FBBDABD88}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>freetype</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Programming\freetype\freetype-2.10.0\x86static\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">freetype.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">freetyped</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Programming\freetype\freetype-2.10.0\x86static\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">freetype.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">freetype</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /MT/O2</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FT2_BUILD_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programming\freetype\freetype-2.10.0\x86static\include;D:\Programming\freetype\freetype-2.10.0\include;D:\Programming\zlib\zlib-1.2.11;D:\Programming\bzip2\bzip2-win-build;D:\Programming\libpng\libpng1.6.37;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Programming\freetype\freetype-2.10.0\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Programming/freetype/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/freetype/freetype-2.10.0 -BD:/Programming/freetype/freetype-2.10.0/x86static --check-stamp-file D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.15\Templates\CPackConfig.cmake.in;D:\Programming\freetype\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeCCompiler.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeRCCompiler.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Programming/freetype/freetype-2.10.0/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Programming/freetype/freetype-2.10.0 -BD:/Programming/freetype/freetype-2.10.0/x86static --check-stamp-file D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPNG.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.15\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.15\Templates\CPackConfig.cmake.in;D:\Programming\freetype\freetype-2.10.0\builds\cmake\FindHarfBuzz.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeCCompiler.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeRCCompiler.cmake;D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\3.15.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Programming\freetype\freetype-2.10.0\x86static\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\freetype.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftadvanc.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftbbox.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftbdf.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftbitmap.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftbzip2.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftcache.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftchapters.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftcid.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftcolor.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftdriver.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\fterrdef.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\fterrors.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftgasp.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftglyph.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftgxval.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftgzip.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftimage.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftincrem.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftlist.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftlzw.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftmac.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftmm.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftmodapi.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftmoderr.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftotval.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftoutln.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftparams.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftpfr.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftrender.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftsizes.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftsnames.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftstroke.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftsynth.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftsystem.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\fttrigon.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\fttypes.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\t1tables.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\ttnameid.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\tttables.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\tttags.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\ft2build.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\config\ftheader.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\config\ftoption.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\autohint.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\cffotypes.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\cfftypes.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftcalc.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftdebug.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftdrv.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\fthash.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftmemory.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftobjs.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftpsprop.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftrfork.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftserv.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftstream.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\fttrace.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\ftvalid.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\internal.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\psaux.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\pshints.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\sfnt.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\t1types.h" />
+    <ClInclude Include="D:\Programming\freetype\freetype-2.10.0\include\freetype\internal\tttypes.h" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\autofit\autofit.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftbase.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftbbox.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftbdf.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftbitmap.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftcid.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftfstype.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftgasp.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftglyph.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftgxval.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftinit.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftmm.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftotval.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftpatent.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftpfr.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftstroke.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftsynth.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftsystem.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\fttype1.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftwinfnt.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\bdf\bdf.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\bzip2\ftbzip2.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\cache\ftcache.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\cff\cff.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\cid\type1cid.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\gzip\ftgzip.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\lzw\ftlzw.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\pcf\pcf.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\pfr\pfr.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\psaux\psaux.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\pshinter\pshinter.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\psnames\psnames.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\raster\raster.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\sfnt\sfnt.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\smooth\smooth.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\truetype\truetype.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\type1\type1.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\type42\type42.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\src\winfonts\winfnt.c" />
+    <ClCompile Include="D:\Programming\freetype\freetype-2.10.0\builds\windows\ftdebug.c" />
+    <ResourceCompile Include="D:\Programming\freetype\freetype-2.10.0\src\base\ftver.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Programming\freetype\freetype-2.10.0\x86static\ZERO_CHECK.vcxproj">
+      <Project>{6D518D6F-3258-3068-AFDD-64B809F18573}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{f5620137-cb7d-4ff0-bd89-34c7b2abe228}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{dad10e33-3f77-4835-9b74-c21e6ba11c12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -31,6 +34,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PHT3D_Viewer_OpenGL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,6 +74,21 @@
     <ClInclude Include="CPPMatrix2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PHT3D_Viewer_OpenGL.rc">
@@ -72,5 +102,19 @@
     <Image Include="res\PHT3D_Viewer_OpenGL.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\shader.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\shader.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\text.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\text.vs">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\test\gtx\gtx_euler_angle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Programming\OpenGL\Computer Graphics with Modern OpenGL and C++\external\glm\test\gtx\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9ABAC8B0-9CB5-353B-8BBD-EC6443BC0303}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

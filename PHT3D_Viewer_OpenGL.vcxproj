@@ -90,14 +90,14 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);WIN32;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)boost;D:\Programming\OpenVR\openvr\headers</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include;$(SolutionDir)boost;$(SolutionDir)glm;$(SolutionDir)glew\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>openvr_api.lib;Dbghelp.lib;vtkCommonColor-8.2.lib;vtkCommonComputationalGeometry-8.2.lib;vtkCommonCore-8.2.lib;vtkCommonDataModel-8.2.lib;vtkCommonExecutionModel-8.2.lib;vtkCommonMath-8.2.lib;vtkCommonMisc-8.2.lib;vtkCommonSystem-8.2.lib;vtkCommonTransforms-8.2.lib;vtkdoubleconversion-8.2.lib;vtkexpat-8.2.lib;vtkgl2ps-8.2.lib;vtkFiltersCore-8.2.lib;vtkFiltersExtraction-8.2.lib;vtkFiltersGeneral-8.2.lib;vtkFiltersGeometry-8.2.lib;vtkFiltersSources-8.2.lib;vtkFiltersStatistics-8.2.lib;vtkfreetype-8.2.lib;vtkglew-8.2.lib;vtkImagingCore-8.2.lib;vtkImagingFourier-8.2.lib;vtkImagingSources-8.2.lib;vtkInteractionStyle-8.2.lib;vtkInteractionWidgets-8.2.lib;vtkIOCore-8.2.lib;vtkIOImage-8.2.lib;vtkIOXML-8.2.lib;vtkIOXMLParser-8.2.lib;vtkjpeg-8.2.lib;vtklz4-8.2.lib;vtklzma-8.2.lib;vtkpng-8.2.lib;vtkRenderingAnnotation-8.2.lib;vtkRenderingCore-8.2.lib;vtkRenderingFreeType-8.2.lib;vtkRenderingGL2PSOpenGL2-8.2.lib;vtkRenderingOpenGL2-8.2.lib;vtkRenderingOpenVR-8.2.lib;vtkRenderingVolume-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtksys-8.2.lib;vtkzlib-8.2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Programming\OpenVR\openvr\bin\win32\$(Configuration);D:\Programming\VTK\VTK-8.2.0\x86static\lib\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlibstaticd.lib;libbz2-static.lib;libpng16_staticd.lib;freetyped.lib;glew32sd.lib;glu32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)zlib\$(Configuration);$(SolutionDir)bzip2\build-VS2015\$(Configuration);$(SolutionDir)libpng\$(Configuration);$(SolutionDir)freetype\x86static\$(Configuration);$(SolutionDir)glew\lib\$(Configuration)\Win32;</AdditionalLibraryDirectories>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -155,13 +155,13 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ExceptionHandling />
       <DebugInformationFormat />
-      <PreprocessorDefinitions>OPENVR_BUILD_STATIC;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Programming/VTK/WTLTest/build/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);WIN32;_WINDOWS;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)boost;D:\Programming\OpenVR\openvr\headers;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_WINDOWS;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)freetype\include;$(SolutionDir)boost;$(SolutionDir)glm;$(SolutionDir)glew\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>openvr_api.lib;Dbghelp.lib;vtkCommonColor-8.2.lib;vtkCommonComputationalGeometry-8.2.lib;vtkCommonCore-8.2.lib;vtkCommonDataModel-8.2.lib;vtkCommonExecutionModel-8.2.lib;vtkCommonMath-8.2.lib;vtkCommonMisc-8.2.lib;vtkCommonSystem-8.2.lib;vtkCommonTransforms-8.2.lib;vtkdoubleconversion-8.2.lib;vtkexpat-8.2.lib;vtkgl2ps-8.2.lib;vtkFiltersCore-8.2.lib;vtkFiltersExtraction-8.2.lib;vtkFiltersGeneral-8.2.lib;vtkFiltersGeometry-8.2.lib;vtkFiltersSources-8.2.lib;vtkFiltersStatistics-8.2.lib;vtkfreetype-8.2.lib;vtkglew-8.2.lib;vtkImagingCore-8.2.lib;vtkImagingFourier-8.2.lib;vtkImagingSources-8.2.lib;vtkInteractionStyle-8.2.lib;vtkInteractionWidgets-8.2.lib;vtkIOCore-8.2.lib;vtkIOImage-8.2.lib;vtkIOXML-8.2.lib;vtkIOXMLParser-8.2.lib;vtkjpeg-8.2.lib;vtklz4-8.2.lib;vtklzma-8.2.lib;vtkpng-8.2.lib;vtkRenderingAnnotation-8.2.lib;vtkRenderingCore-8.2.lib;vtkRenderingFreeType-8.2.lib;vtkRenderingGL2PSOpenGL2-8.2.lib;vtkRenderingOpenGL2-8.2.lib;vtkRenderingOpenVR-8.2.lib;vtkRenderingVolume-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtksys-8.2.lib;vtkzlib-8.2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Programming\OpenVR\openvr\bin\win32\$(Configuration);D:\Programming\VTK\VTK-8.2.0\x86static\lib\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlibstatic.lib;libbz2-static.lib;libpng16_static.lib;freetype.lib;glew32s.lib;glu32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)zlib\$(Configuration);$(SolutionDir)bzip2\build-VS2015\$(Configuration);$(SolutionDir)libpng\$(Configuration);$(SolutionDir)freetype\x86static\$(Configuration);$(SolutionDir)glew\lib\$(Configuration)\Win32;</AdditionalLibraryDirectories>
     </Link>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -210,8 +210,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="ModelRead.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -224,10 +228,15 @@
   <ItemGroup>
     <ClInclude Include="AboutDlg.h" />
     <ClInclude Include="atlwfile.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CPPMatrix2.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="ModelRead.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
@@ -238,7 +247,18 @@
     <Image Include="res\toolbar.bmp" />
     <Image Include="res\PHT3D_Viewer_OpenGL.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\shader.fs" />
+    <None Include="Shaders\shader.vs" />
+    <None Include="Shaders\text.fs" />
+    <None Include="Shaders\text.vs" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="PHT3D_Viewer_OpenGL.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

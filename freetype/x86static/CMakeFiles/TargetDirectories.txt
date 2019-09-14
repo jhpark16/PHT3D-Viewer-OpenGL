@@ -1,0 +1,5 @@
+D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/PACKAGE.dir
+D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/freetype.dir
+D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/INSTALL.dir
+D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/ALL_BUILD.dir
+D:/Programming/freetype/freetype-2.10.0/x86static/CMakeFiles/ZERO_CHECK.dir
