@@ -67,7 +67,7 @@ LRESULT CMainFrame::OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/
   m_StatusBar.SetPaneIcon(IDR_TIME, AtlLoadIconImage(IDR_TIME, LR_DEFAULTCOLOR));
   // set the status bar pane text
   TCHAR szBuffer[100];
-  wsprintf(szBuffer, _T("Use WASD and TFGH keys to control the view"), 0);
+  wsprintf(szBuffer, _T("Use Left, Middle, and Right mouse click and dragging to control the view"), 0);
   m_StatusBar.SetPaneText(ID_DEFAULT_PANE, szBuffer);
 
   // initialize date/time and start a 1 second timer

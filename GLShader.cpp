@@ -1,36 +1,36 @@
 #include "stdafx.h"
-#include "Shader.h"
+#include "GLShader.h"
 
-Shader::Shader()
+GLShader::GLShader()
 {
   shaderID = 0;
-  uniformModel = 0;
-  uniformProjection = 0;
+  uniModel = 0;
+  uniProjection = 0;
 }
 
-void Shader::CreateFromString(const char *vertexCode, const char *fragmentCode)
+void GLShader::CreateFromString(const char *vertexCode, const char *fragmentCode)
 {
-  CompileShader(vertexCode, fragmentCode);
+  Compile(vertexCode, fragmentCode);
 }
 
 
-void Shader::CreateFromFiles(const char *vertexLocation, const char *fragmentLocation)
+void GLShader::CreateFromFiles(const char *vertexLocation, const char *fragmentLocation)
 {
   std::string vertexString = ReadFile(vertexLocation);
   std::string fragmentString = ReadFile(fragmentLocation);
   const char *vertexCode = vertexString.c_str();
   const char *fragmentCode = fragmentString.c_str();
 
-  CompileShader(vertexCode, fragmentCode);
+  Compile(vertexCode, fragmentCode);
 }
 
-std::string Shader::ReadFile(const char *fileLocation)
+std::string GLShader::ReadFile(const char *fileLocation)
 {
   std::string content;
   std::ifstream fileStream(fileLocation, std::ios::in);
 
   if (!fileStream.is_open()) {
-    fprintf(stderr, "Failed to read %s! File doesn't exist.", fileLocation);
+    fprintf(stderr, "Failed to read %s!", fileLocation);
     return "";
   }
   std::string line = "";
@@ -42,7 +42,7 @@ std::string Shader::ReadFile(const char *fileLocation)
   return content;
 }
 
-void Shader::AddShader(GLuint theProgram, const char*shaderCode, GLenum shaderType)
+void GLShader::Add(GLuint theProgram, const char*shaderCode, GLenum shaderType)
 {
   GLuint theShader = glCreateShader(shaderType);
   const GLchar* theCode[1];
@@ -67,52 +67,52 @@ void Shader::AddShader(GLuint theProgram, const char*shaderCode, GLenum shaderTy
   glAttachShader(theProgram, theShader);
 }
 
-GLuint Shader::GetProjectionLocation()
+GLuint GLShader::GetProjectionLocation()
 {
-  return uniformProjection;
+  return uniProjection;
 }
 
-GLuint Shader::GetModelLocation()
+GLuint GLShader::GetModelLocation()
 {
-  return uniformModel;
+  return uniModel;
 }
 
-GLuint Shader::GetViewLocation()
+GLuint GLShader::GetViewLocation()
 {
-  return uniformView;
+  return uniView;
 }
 
-GLuint Shader::GetAmbientColourLocation()
+GLuint GLShader::GetAmbientColourLocation()
 {
-  return uniformAmbientColour;
+  return uniAmbColour;
 }
 
-GLuint Shader::GetAmbientIntensityLocation()
+GLuint GLShader::GetAmbientIntensityLocation()
 {
-  return uniformAmbientIntesity;
+  return uniAmbIntesity;
 }
 
-GLuint Shader::GetDiffuseIntensityLocation()
+GLuint GLShader::GetDiffuseIntensityLocation()
 {
-  return uniformDiffuseIntensity;
+  return uniDirLightDiffuseIntensity;
 }
 
-GLuint Shader::GetDirectionLocation()
+GLuint GLShader::GetDirectionLocation()
 {
-  return uniformDirection;
+  return uniDirLightDirection;
 }
 
-GLuint Shader::GetVColourFracLocation()
+GLuint GLShader::GetVColourFracLocation()
 {
-  return uniformVColourFrac;
+  return uniVertexColourFrac;
 }
 
-GLuint Shader::GetShaderID()
+GLuint GLShader::GetShaderID()
 {
   return shaderID;
 }
 
-void Shader::CompileShader(const char* vShader, const char *fShader)
+void GLShader::Compile(const char* vShader, const char *fShader)
 {
   shaderID = glCreateProgram();
 
@@ -121,8 +121,8 @@ void Shader::CompileShader(const char* vShader, const char *fShader)
     return;
   }
 
-  AddShader(shaderID, vShader, GL_VERTEX_SHADER);
-  AddShader(shaderID, fShader, GL_FRAGMENT_SHADER);
+  Add(shaderID, vShader, GL_VERTEX_SHADER);
+  Add(shaderID, fShader, GL_FRAGMENT_SHADER);
 
   GLint result = 0;
   GLchar eLog[1024] = { 0 };
@@ -143,22 +143,22 @@ void Shader::CompileShader(const char* vShader, const char *fShader)
     return;
   }
 
-  uniformProjection = glGetUniformLocation(shaderID, "projection");
-  uniformModel = glGetUniformLocation(shaderID, "model");
-  uniformView = glGetUniformLocation(shaderID, "view");
-  uniformAmbientColour = glGetUniformLocation(shaderID, "dirLight.colour");
-  uniformAmbientIntesity = glGetUniformLocation(shaderID, "dirLight.ambient");
-  uniformDirection = glGetUniformLocation(shaderID, "dirLight.direction");
-  uniformDiffuseIntensity = glGetUniformLocation(shaderID, "dirLight.diffuse");
-  uniformVColourFrac = glGetUniformLocation(shaderID, "vColourFrac");
+  uniProjection = glGetUniformLocation(shaderID, "projection");
+  uniModel = glGetUniformLocation(shaderID, "model");
+  uniView = glGetUniformLocation(shaderID, "view");
+  uniAmbColour = glGetUniformLocation(shaderID, "dirLight.colour");
+  uniAmbIntesity = glGetUniformLocation(shaderID, "dirLight.ambient");
+  uniDirLightDirection = glGetUniformLocation(shaderID, "dirLight.direction");
+  uniDirLightDiffuseIntensity = glGetUniformLocation(shaderID, "dirLight.diffuse");
+  uniVertexColourFrac = glGetUniformLocation(shaderID, "vColourFrac");
 }
 
-void Shader::UseShader()
+void GLShader::Use()
 {
   glUseProgram(shaderID);
 }
 
-void Shader::ClearShader()
+void GLShader::Clear()
 {
   if (shaderID != 0) {
     glDeleteProgram(shaderID);
@@ -166,7 +166,7 @@ void Shader::ClearShader()
   }
 }
 
-Shader::~Shader()
+GLShader::~GLShader()
 {
 
 }

@@ -210,12 +210,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AboutDlg.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="GLCamera.cpp" />
+    <ClCompile Include="GLLight.cpp" />
     <ClCompile Include="MainFrm.cpp" />
-    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="GLMesh.cpp" />
     <ClCompile Include="ModelRead.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -228,15 +228,14 @@
   <ItemGroup>
     <ClInclude Include="AboutDlg.h" />
     <ClInclude Include="atlwfile.h" />
-    <ClInclude Include="Camera.h" />
+    <ClInclude Include="GLCamera.h" />
     <ClInclude Include="CPPMatrix2.h" />
-    <ClInclude Include="Light.h" />
+    <ClInclude Include="GLLight.h" />
     <ClInclude Include="MainFrm.h" />
-    <ClInclude Include="mesh.h" />
+    <ClInclude Include="GLMesh.h" />
     <ClInclude Include="ModelRead.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="GLShader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>

@@ -13,29 +13,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Camera.h"
-#include "Light.h"
-#include "Shader.h"
+#include "GLCamera.h"
+#include "GLLight.h"
+#include "GLShader.h"
+#include "GLMesh.h"
 
 class CView : public CWindowImpl<CView>//, public VTK_Operation
 {
 public:
-	DECLARE_WND_CLASS(NULL)
-
-  HGLRC m_hRC;			// Handle to RC
-  Camera camera;
-  Light mainLight;
-  glm::mat4 projection;
-  GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0,
-    uniformAmbientColour = 0, uniformDirection = 0, uniformDiffuseIntensity = 0,
-    uniformVColourFrac = 0;
-  GLfloat fFovy = 45.0f; // Field-of-view
-  GLfloat fZNear = 0.1f;  // Near clipping plane
-  GLfloat fZFar = 100.0f;  // Far clipping plane
-  GLfloat fAspect = 1.25;
-  LARGE_INTEGER start;
-  LARGE_INTEGER frequency;
-
+  DECLARE_WND_CLASS(NULL)
 
 	BOOL PreTranslateMessage(MSG* pMsg);
 
@@ -110,17 +96,43 @@ public:
   PHT3D_Model& GetPHT3DM(void); 
 
 private:
-  //bool bInitialized;
+  HGLRC m_hRC;			// Handle to RC
+
   PHT3D_Model mPHT3DM;
+  GLCamera camera;
+  GLLight mainLight;
+
   BOOL disableActivateApp;
   BOOL m_bClockRunning;
   SYSTEMTIME m_stLastTime;
 //  VTK_Operation* pvtkDemo;
   HWND m_hWndParent;
+
+  int *vertexLengths = new int[3]{ 3, 3, 3 };
+
+  GLfloat fFovy{ 45.0f }; // Field-of-view
+  GLfloat fZNear{ 0.1f };  // Near clipping plane
+  GLfloat fZFar{ 100.0f };  // Far clipping plane
+  GLfloat fAspect{ 1.25 };
+
+  int mouseMode{ 0 }, mouseX{ 0 }, mouseY{ 0 };
+  bool bMouseInit{ false };
+  float transFractor{ 0.01f }, scaleFactor{ 1 };
+  GLMesh *lineMesh{}, *filledMesh{}, *legend{};
+
+  glm::mat4 projection;
+  glm::mat4 modelRotate, modelScale, modelTrans;
+
+  GLuint uniProjection{ 0 }, uniModel{ 0 }, uniView{ 0 },
+    uniformAmbientIntensity{ 0 }, uniAmbColour{ 0 }, uniDirLightDirection{ 0 },
+    uniDirLightDiffuseIntensity{ 0 }, uniVertexColourFrac{ 0 };
+
+  LARGE_INTEGER start;
+  LARGE_INTEGER frequency;
 };
 
 void CalcAverageNormals(unsigned int *indices, unsigned int indiceCount, GLfloat *vertices,
   unsigned int verticeCount, unsigned int vLength, unsigned int normalOffset);
 
-void RenderText(Shader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
+void RenderText(GLShader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
 

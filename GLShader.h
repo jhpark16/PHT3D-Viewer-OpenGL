@@ -5,13 +5,10 @@
 // Include GLEW
 #include <GL/glew.h>
 
-// Include GLFW
-//#include <GLFW/glfw3.h>
-
-class Shader
+class GLShader
 {
 public:
-  Shader();
+  GLShader();
 
   void CreateFromString(const char *vertextCode, const char *fragmentCode);
   void CreateFromFiles(const char *vertextLocation, const char *fragmentLocation);
@@ -28,17 +25,16 @@ public:
   GLuint GetVColourFracLocation();
   GLuint GetShaderID();
 
-  void UseShader();
-  void ClearShader();
+  void Use();
+  void Clear();
 
-  ~Shader();
+  ~GLShader();
 
 private:
-//  GLuint shader;
-  GLuint shaderID, uniformProjection, uniformModel, uniformView,
-    uniformAmbientIntesity, uniformAmbientColour, uniformDiffuseIntensity, 
-    uniformDirection, uniformVColourFrac;
+  GLuint shaderID, uniProjection, uniModel, uniView,
+    uniAmbIntesity, uniAmbColour, uniDirLightDiffuseIntensity, 
+    uniDirLightDirection, uniVertexColourFrac;
 
-  void CompileShader(const char* vertexCode, const char *fragmentCode);
-  void AddShader(GLuint theProgram, const char*shaderCode, GLenum shaderType);
+  void Compile(const char* vertexCode, const char *fragmentCode);
+  void Add(GLuint theProgram, const char*shaderCode, GLenum shaderType);
 };

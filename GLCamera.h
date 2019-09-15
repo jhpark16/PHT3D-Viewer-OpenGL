@@ -5,13 +5,11 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-//#include <GLFW/glfw3.h>
-
-class Camera
+class GLCamera
 {
 public:
-  Camera();
-  Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, 
+  GLCamera();
+  GLCamera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, 
     GLfloat startMoveSpeed, GLfloat startTurnSpeed);
 
   void keyControl(char key);
@@ -19,7 +17,7 @@ public:
 
   glm::mat4 calculateViewMatrix();
 
-  ~Camera();
+  ~GLCamera();
 
 private:
   glm::vec3 position;
