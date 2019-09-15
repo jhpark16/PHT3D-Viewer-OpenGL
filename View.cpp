@@ -70,6 +70,7 @@ void CreateShaders()
 void CalcAverageNormals(unsigned int *indices, unsigned int indiceCount, GLfloat *vertices,
   unsigned int verticeCount, unsigned int vLength, unsigned int normalOffset)
 {
+  // Add a face normal vector to the vertex normal vector
   for (size_t i = 0; i < indiceCount; i += 3) {
     unsigned int in0 = indices[i] * vLength;
     unsigned int in1 = indices[i + 1] * vLength;
@@ -94,7 +95,7 @@ void CalcAverageNormals(unsigned int *indices, unsigned int indiceCount, GLfloat
     vertices[in2 + 1] += normal.y;
     vertices[in2 + 2] += normal.z;
   }
-
+  // Normalize all vertex normal vectors
   for (size_t i = 0; i < verticeCount / vLength; i++) {
     unsigned int nOffset = i * vLength + normalOffset;
     glm::vec3 vec(vertices[nOffset], vertices[nOffset + 1], vertices[nOffset + 2]);
@@ -137,6 +138,7 @@ LRESULT CView::OnFileOpen(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, 
   return 0;
 }
 
+// Using mPHT3DM data, construct 3D mesh (vertices and indices)
 void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfloat *&vertices,
   unsigned int &nVertices, unsigned int nVertColumn)
 {
@@ -183,11 +185,14 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
   for (int k = 0; k < nLay; k++) {
     // Takes care of four corners
     if (k < nLay - 1) {
+      // The bottom elevation is used for most layers
       elevation = mf.DIS_BOTMS[k];
     }
     else {
+      // The elevation of the top layer is from the DIS_TOP
       elevation = mf.DIS_TOP;
     }
+    // The elevation varies and interpolation is needed for vertex data
     zLoc[k*nRow*nCol + 0 * nCol + 0] = elevation[0][0];
     zLoc[k*nRow*nCol + 0 * nCol + (nCol - 1)] = elevation[0][nCol - 2];
     zLoc[k*nRow*nCol + (nRow - 1) * nCol + 0] = elevation[nRow - 2][0];
@@ -234,6 +239,7 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
                 tmp += mf.BAS_STRT[k3][j3][i3];
               }
             }
+        // locations(4th value) is used for a variable
         locations[4 * (k*(nRow*nCol) + j*(nCol)+i) + 3] = nItems > 0 ? tmp / nItems : 0;
         locations[4 * (k*(nRow*nCol) + j*(nCol)+i) + 0] = xLoc[i]; //X value
         locations[4 * (k*(nRow*nCol) + j*(nCol)+i) + 1] = yLoc[j]; //Y value
@@ -244,6 +250,7 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
       }
     }
   }
+  // Count the number of active cells and evaluate data minimum and maximum
   mPHT3DM.dMin = DBL_MAX;
   mPHT3DM.dMax = -DBL_MAX;
   int idx[4];
@@ -260,8 +267,11 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
       }
     }
   }
-  indices = new unsigned int[numActiveCells * 36];
-  vertices = new GLfloat[numActiveCells * 24 * nVertColumn];
+  // Allocate vertices and indices for active cells
+  nIndices = numActiveCells * 36;
+  nVertices = numActiveCells * 24 * nVertColumn;
+  indices = new unsigned int[nIndices];
+  vertices = new GLfloat[nVertices];
   int numCells = 0;
   for (int k = 0; k < nLay - 1; k++) {
     for (int j = 0; j < nRow - 1; j++) {
@@ -313,6 +323,7 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
               int ii5 = connectivity[9 * numCells + 1 + idx[ii]];
               int iVert = (iVertStart + ii) * nVertColumn;
               float tmp = (locations[ii5 * 4 + 3] - mPHT3DM.dMin) / (mPHT3DM.dMax - mPHT3DM.dMin);
+              // Jet colour scheme 
               float r, g, b;
               if (tmp <= 0.25) {
                 r = 0;
@@ -334,6 +345,7 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
                 g = max(0.0, (1.0 - tmp) / 0.25);
                 b = 0;
               }
+              // Update X, Y, Z vertices, R, G, B for the vertex colour and the normal vector 
               vertices[iVert + 0] = locations[ii5 * 4 + 0];
               vertices[iVert + 1] = locations[ii5 * 4 + 1];
               vertices[iVert + 2] = locations[ii5 * 4 + 2];
@@ -358,8 +370,6 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
       }
     }
   }
-  nIndices = numCells * 36;
-  nVertices = numCells * 24 * nVertColumn;
 }
 
 void CView::CreateObjects()
@@ -389,10 +399,14 @@ void CView::CreateObjects()
   // Set model scale, rotation, and translation.
   glm::mat4 model1{ 1.0f };
 
+  // Calculate the scaleFactor the model
   scaleFactor = 6.0 / max(mPHT3DM.Xmax - mPHT3DM.Xmin, mPHT3DM.Ymax - mPHT3DM.Ymin);
+  // Calculate the rotation of the model
   //model = glm::rotate(model, glm::radians(30.0f), glm::vec3(-1.0f, 1.0f, 0.0f));
   modelRotate = glm::rotate(model1, glm::radians(-40.0f), glm::vec3(1.0f, 0.4f, 0.3f));
+  // Calculate the scale of the model
   modelScale = glm::scale(model1, glm::vec3(scaleFactor, scaleFactor, scaleFactor));
+  // Calculate the translation of the model
   //model = glm::translate(model, glm::vec3(-2.0f, -6.0f, -2.5f));
   modelTrans = glm::translate(model1, glm::vec3(-(mPHT3DM.Xmax - mPHT3DM.Xmin) / 2.0,
     -(mPHT3DM.Ymax - mPHT3DM.Ymin) / 2.0, -((mPHT3DM.Zmax - mPHT3DM.Zmin) / 2.0)));
@@ -453,7 +467,7 @@ LRESULT CView::OnCreate(LPCREATESTRUCT lParam)
   glewExperimental = GL_TRUE;
   // Initialize glew
   if (glewInit() != GLEW_OK) {
-    fprintf(stderr, "Failed to initialize GLEW\n");
+    std::cout << "Failed to initialize GLEW" << std::endl;
     getchar();
     //glfwTerminate();
     return FALSE;
@@ -471,9 +485,9 @@ LRESULT CView::OnCreate(LPCREATESTRUCT lParam)
 // Setup OpenGL, shaders, a colour map legend, and FreeType
 void CView::OnInit(void)
 {
-  glFrontFace(GL_CCW);
-  glEnable(GL_CULL_FACE);
-  glEnable(GL_DEPTH_TEST);
+  glFrontFace(GL_CCW); // Counter clock wise faces are outside faces
+  glEnable(GL_CULL_FACE); // Hidden face removal
+  glEnable(GL_DEPTH_TEST); // Depth test for hidden face removal
 
   CreateShaders();
 
@@ -511,7 +525,7 @@ void CView::OnInit(void)
 
   legend->Create(vertices2, indices2, nVertices2, nIndices2, vertexLengths);
 
-  camera = GLCamera(glm::vec3(0.f, 0.0f, 10.f), glm::vec3(0.f, 1.f, 0.f), -90.f, 0.f, 0.1f, 0.1f);
+  camera = GLCamera(glm::vec3(0.f, 0.0f, 10.f), glm::vec3(0.f, 1.f, 0.f), -90.f, 0.f);
 
   //mainLight = GLLight(1.f, 1.f, 1.f, 0.3f, 2.f, -1.f, -2.f, 1.f);
   //mainLight = GLLight(1.f, 1.f, 1.f, 0.3f, -1.f, 1.f, 1.f, 1.0f);
@@ -612,7 +626,6 @@ void CView::OnResize(int cx, int cy) {
     projection = glm::perspective(glm::radians(fFovy), fAspect, fZNear, fZFar);
     // Setup Viewport size
     glViewport(0, 0, (rc.right - rc.left), (rc.bottom - rc.top));
-
   }
 }
 
@@ -631,28 +644,23 @@ void CView::OnRender(void)
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   shaderList[0].Use();
+  // Get all the locations from the shader
   uniModel = shaderList[0].GetModelLocation();
   uniProjection = shaderList[0].GetProjectionLocation();
   uniView = shaderList[0].GetViewLocation();
-  uniformAmbientIntensity = shaderList[0].GetAmbientIntensityLocation();
-  uniAmbColour = shaderList[0].GetAmbientColourLocation();
-  uniDirLightDirection = shaderList[0].GetDirectionLocation();
+  uniformAmbientIntensity = shaderList[0].GetAmbIntensityLocation();
+  uniAmbColour = shaderList[0].GetAmbColourLocation();
+  uniDirLightDirection = shaderList[0].GetDirLightLocation();
   uniDirLightDiffuseIntensity = shaderList[0].GetDiffuseIntensityLocation();
   uniVertexColourFrac = shaderList[0].GetVColourFracLocation();
-
+  // Use a directional light with ambient lighting
   mainLight.Use(uniformAmbientIntensity, uniAmbColour, uniDirLightDiffuseIntensity, 
     uniDirLightDirection);
 
-  glm::mat4 model{ 1.0f };
-  if (0) {
-    model = glm::translate(model, glm::vec3(0.f, 0.f, -2.5f));
-    model = glm::rotate(model, glm::radians(25.0f), glm::vec3(1.0f, 1.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(0.0001f, 0.0001f, 0.0001f));
-  }
-  else {
-    model = model*modelRotate*modelScale*modelTrans;
-  }
+  glm::mat4 model = modelRotate*modelScale*modelTrans;
 
+  // uniVertexColourFrac==0 for regular rendering
+  // uniVertexColourFrac==1 if you do not want to add lighting effect (colour map)
   glUniform1f(uniVertexColourFrac, 0.0f);
   glUniformMatrix4fv(uniView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
   glUniformMatrix4fv(uniProjection, 1, GL_FALSE, glm::value_ptr(projection));
@@ -661,6 +669,7 @@ void CView::OnRender(void)
   // Hidden line removal with Polygon Offset
   if (filledMesh) {
     if (0) {
+      // Draw lien and filled polygons
       // Draw Lines
       glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
       lineMesh->Render();
@@ -673,6 +682,7 @@ void CView::OnRender(void)
       glDisable(GL_POLYGON_OFFSET_FILL);
     }
     else {
+      // Draw filled polygons only
       glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
       filledMesh->Render();
     }
@@ -690,20 +700,27 @@ void CView::OnRender(void)
   shaderList[1].Use();
   glUniformMatrix4fv(glGetUniformLocation(shaderList[1].GetShaderID(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
+  // Draw Text using FreeType
   // Configure VAO/VBO for texture quads
-  glEnable(GL_BLEND);
+  glEnable(GL_BLEND); // Blend with the background image
+  // src_alpha*src_colour + (1-src_alpha)*dest_colour
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-  glGenVertexArrays(1, &VAO);
-  glGenBuffers(1, &VBO);
+  glGenVertexArrays(1, &VAO); // Generate vertex array object name
+  glGenBuffers(1, &VBO); // Generate vbo name
   glBindVertexArray(VAO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  // Send the data
   glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
   glEnableVertexAttribArray(0);
+  // Setup the buffer (4 float per vertex and 4 float stride)
   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);
+  // Unbind the buffer
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
+  // Render the title text
   RenderText(shaderList[1], "MODFLOW Model", width / 2 - width*0.12f, height*0.92f, width*0.0007f, glm::vec3(1.0f, 1.0f, 1.0f));
   if (filledMesh) {
+    // Render the title of the colour map
     RenderText(shaderList[1], "Head (ft)", width*0.87f, height*0.78f, width*0.0005f, glm::vec3(1.0f, 1.0f, 1.0f));
     int nColormapLabels = 4;
     double diff = (mPHT3DM.dMax - mPHT3DM.dMin)/(nColormapLabels-1.0);
@@ -711,6 +728,7 @@ void CView::OnRender(void)
     for (int i = 0; i < 4; i++) {
       double tVal = mPHT3DM.dMin + diff*i;
       tstr.Format("%.1lf", tVal);
+      // Render the labels of the colour map
       RenderText(shaderList[1], tstr.GetString(), width*0.905f, height*(0.240f+i*0.167), width*0.00035f, glm::vec3(1.0f, 1.0f, 1.0f));
     }
   }
@@ -824,8 +842,6 @@ void CView::OnTimer(UINT uTimerID, TIMERPROC pTimerProc)
 
 void CView::StepDemo(int step)
 {
-  //pvtkDemo->OnTimer(m_hWnd, step);
-  //pvtkDemo->StepObjects(m_stLastTime.wSecond);
   RedrawWindow();
 }
 
@@ -844,13 +860,10 @@ void CView::StopClock()
 
 void CView::OnLButtonDblClk(UINT uMsg, CPoint point)
 {
-  //		ATLTRACE("OnLButtonDblClk: %d, %d, %d\n", uMsg, point.x, point.y);
-  //pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
 }
 
 void CView::OnLButtonDown(UINT uMsg, CPoint point)
 {
-  //pvtkDemo->OnLButtonDown(m_hWnd, uMsg, point);
   mouseMode |= 1;
 }
 
@@ -889,6 +902,7 @@ void CView::OnMouseMove(UINT uMsg, CPoint point)
     int yDiff = point.y - mouseY;
     if (xDiff != 0 || yDiff != 0) {
       if (mouseMode & 1) {
+        // Rotation of the model
         glm::vec3 v1 = glm::vec3(xDiff, -yDiff, 0.0f);
         glm::vec3 v2 = glm::vec3(0, 0, 1.0f);
         glm::vec3 axis = glm::cross(v1, v2);
@@ -896,12 +910,14 @@ void CView::OnMouseMove(UINT uMsg, CPoint point)
         modelRotate = glm::rotate(modelRotate, glm::radians(-1.0f), axis);
         Invalidate();
       }
-      if (mouseMode & 2) {
+      else if (mouseMode & 2) {
+        // Translation of the model
         modelTrans = glm::translate(modelTrans, glm::vec3(transFractor/scaleFactor*xDiff,
           -transFractor/scaleFactor*yDiff, 0));
         Invalidate();
       }
       else if (mouseMode & 4) {
+        // Scaling of the model
         glm::mat4 model1{ 1.0f };
         scaleFactor *= 1.0f - yDiff*2e-3;
         modelScale = glm::scale(model1, glm::vec3(scaleFactor, scaleFactor, scaleFactor));
@@ -926,33 +942,7 @@ LRESULT CView::OnKeyUp(UINT uMsg, WPARAM charCode, LPARAM lParam, BOOL& bHandled
 
 LRESULT CView::OnKeyDown(UINT uMsg, WPARAM charCode, LPARAM lParam, BOOL& bHandled)
 {
-  /*
   // lower 16 bits of lParma is the repeat count.
-  if (toupper(charCode) == 'W') {
-    camera.keyControl(toupper(charCode));
-  }
-  else if (toupper(charCode) == 'S') {
-    camera.keyControl(toupper(charCode));
-  }
-  else if (toupper(charCode) == 'A') {
-    camera.keyControl(toupper(charCode));
-  }
-  else if (toupper(charCode) == 'D') {
-    camera.keyControl(toupper(charCode));
-  }
-  else if (toupper(charCode) == 'T' || charCode == VK_UP) {
-    camera.mouseControl(0, 10);
-  }
-  else if (toupper(charCode) == 'G' || charCode == VK_DOWN) {
-    camera.mouseControl(0, -10);
-  }
-  else if (toupper(charCode) == 'F' || charCode == VK_LEFT) {
-    camera.mouseControl(-10, 0);
-  }
-  else if (toupper(charCode) == 'H' || charCode == VK_RIGHT) {
-    camera.mouseControl(10, 0);
-  }
-  */
   return 0;
 }
 
@@ -1013,6 +1003,7 @@ void RenderText(GLShader &shader, std::string text, GLfloat x, GLfloat y, GLfloa
     // Now advance cursors for next glyph (note that advance is number of 1/64 pixels)
     x += (ch.Advance >> 6) * scale; // Bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64 to get amount of pixels))
   }
+  // Unbind arrays
   glBindVertexArray(0);
   glBindTexture(GL_TEXTURE_2D, 0);
 }

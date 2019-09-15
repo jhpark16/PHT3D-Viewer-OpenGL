@@ -2,7 +2,8 @@
 //
 // Author: Jungho Park (jhpark16@gmail.com)
 // Date: May 2015
-// Description: 
+// Description: CMainFrame class often handle command messages and messages for 
+//   UI elements.
 //
 /////////////////////////////////////////////////////////////////////////////
 

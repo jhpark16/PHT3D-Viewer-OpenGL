@@ -98,41 +98,45 @@ public:
 private:
   HGLRC m_hRC;			// Handle to RC
 
-  PHT3D_Model mPHT3DM;
-  GLCamera camera;
-  GLLight mainLight;
+  PHT3D_Model mPHT3DM; // PHT3D data structure
+  GLCamera camera; // camera class
+  GLLight mainLight; // main directional light
 
   BOOL disableActivateApp;
   BOOL m_bClockRunning;
   SYSTEMTIME m_stLastTime;
-//  VTK_Operation* pvtkDemo;
-  HWND m_hWndParent;
 
-  int *vertexLengths = new int[3]{ 3, 3, 3 };
+  HWND m_hWndParent; // parent window
+
+  int *vertexLengths = new int[3]{ 3, 3, 3 }; // data lengths for the each entry of vertex data
 
   GLfloat fFovy{ 45.0f }; // Field-of-view
   GLfloat fZNear{ 0.1f };  // Near clipping plane
   GLfloat fZFar{ 100.0f };  // Far clipping plane
-  GLfloat fAspect{ 1.25 };
+  GLfloat fAspect{ 1.25 }; // 
 
-  int mouseMode{ 0 }, mouseX{ 0 }, mouseY{ 0 };
+  int mouseMode{ 0 }, mouseX{ 0 }, mouseY{ 0 }; // Mouse dragging mode
   bool bMouseInit{ false };
   float transFractor{ 0.01f }, scaleFactor{ 1 };
-  GLMesh *lineMesh{}, *filledMesh{}, *legend{};
+  GLMesh *lineMesh{}, *filledMesh{}, *legend{}; // Three meshes for rendering
 
-  glm::mat4 projection;
+  glm::mat4 projection; // orthographic or perspective projection
+  // Rotation, scale, and translation of the model
   glm::mat4 modelRotate, modelScale, modelTrans;
 
+  // Uniform locations
   GLuint uniProjection{ 0 }, uniModel{ 0 }, uniView{ 0 },
     uniformAmbientIntensity{ 0 }, uniAmbColour{ 0 }, uniDirLightDirection{ 0 },
     uniDirLightDiffuseIntensity{ 0 }, uniVertexColourFrac{ 0 };
-
+  // High performance counters
   LARGE_INTEGER start;
   LARGE_INTEGER frequency;
 };
 
+// Calculate average normal vector using individual face normal vectors
 void CalcAverageNormals(unsigned int *indices, unsigned int indiceCount, GLfloat *vertices,
   unsigned int verticeCount, unsigned int vLength, unsigned int normalOffset);
 
+// Rendering text using FreeType
 void RenderText(GLShader &shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
 

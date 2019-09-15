@@ -1,8 +1,9 @@
-// ModuleRead.cpp : implmentation of various MODFLOW data classes
+// ModelRead.cpp : implmentation of various MODFLOW data classes
 //
 // Author: Jungho Park (jhpark16@gmail.com)
 // Date: May 2015
-// Description: 
+// Description: The module reads MODFLOW files and construct PHT3DM
+//   data structure for 3D plotting
 //
 /////////////////////////////////////////////////////////////////////////////
 

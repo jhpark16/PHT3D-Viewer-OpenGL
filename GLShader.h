@@ -15,15 +15,15 @@ public:
 
   std::string ReadFile(const char* fileLocation);
 
+  GLuint GetShaderID();
+  GLuint GetAmbIntensityLocation();
+  GLuint GetAmbColourLocation();
+  GLuint GetDiffuseIntensityLocation();
+  GLuint GetDirLightLocation();
+  GLuint GetVColourFracLocation();
   GLuint GetProjectionLocation();
   GLuint GetModelLocation();
   GLuint GetViewLocation();
-  GLuint GetAmbientIntensityLocation();
-  GLuint GetAmbientColourLocation();
-  GLuint GetDiffuseIntensityLocation();
-  GLuint GetDirectionLocation();
-  GLuint GetVColourFracLocation();
-  GLuint GetShaderID();
 
   void Use();
   void Clear();
@@ -31,9 +31,9 @@ public:
   ~GLShader();
 
 private:
-  GLuint shaderID, uniProjection, uniModel, uniView,
-    uniAmbIntesity, uniAmbColour, uniDirLightDiffuseIntensity, 
-    uniDirLightDirection, uniVertexColourFrac;
+  GLuint uniAmbIntesity, uniAmbColour, uniDirLightDiffuseIntensity, 
+    uniDirLightDirection, uniProjection, uniModel, uniView, 
+    uniVertexColourFrac, uniTextColour, shaderID;
 
   void Compile(const char* vertexCode, const char *fragmentCode);
   void Add(GLuint theProgram, const char*shaderCode, GLenum shaderType);

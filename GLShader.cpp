@@ -1,19 +1,27 @@
+// GLShader.cpp : Shader managing class
+//
+// Author: Jungho Park (jhpark16@gmail.com)
+// Date: August 2017
+// Description: A simple shader managing class, the shader uses ambient and directional light.
+//
+/////////////////////////////////////////////////////////////////////////////
+
 #include "stdafx.h"
 #include "GLShader.h"
 
-GLShader::GLShader()
+GLShader::GLShader() :uniAmbIntesity{ 0 }, uniAmbColour{ 0 }, uniDirLightDiffuseIntensity{ 0 },
+uniDirLightDirection{ 0 }, uniProjection{ 0 }, uniModel{ 0 }, uniView{ 0 },
+uniVertexColourFrac{ 0 }, uniTextColour{}, shaderID{ 0 }
 {
-  shaderID = 0;
-  uniModel = 0;
-  uniProjection = 0;
 }
 
+// Create shaders using the string values provided
 void GLShader::CreateFromString(const char *vertexCode, const char *fragmentCode)
 {
   Compile(vertexCode, fragmentCode);
 }
 
-
+// Read shaders from files and compile the shaders
 void GLShader::CreateFromFiles(const char *vertexLocation, const char *fragmentLocation)
 {
   std::string vertexString = ReadFile(vertexLocation);
@@ -24,13 +32,14 @@ void GLShader::CreateFromFiles(const char *vertexLocation, const char *fragmentL
   Compile(vertexCode, fragmentCode);
 }
 
+// Read a shader file
 std::string GLShader::ReadFile(const char *fileLocation)
 {
   std::string content;
   std::ifstream fileStream(fileLocation, std::ios::in);
 
   if (!fileStream.is_open()) {
-    fprintf(stderr, "Failed to read %s!", fileLocation);
+    std::cout << "Failed to read " << fileLocation << "!" << std::endl;
     return "";
   }
   std::string line = "";
@@ -42,6 +51,7 @@ std::string GLShader::ReadFile(const char *fileLocation)
   return content;
 }
 
+// Add shader code to the class
 void GLShader::Add(GLuint theProgram, const char*shaderCode, GLenum shaderType)
 {
   GLuint theShader = glCreateShader(shaderType);
@@ -50,20 +60,24 @@ void GLShader::Add(GLuint theProgram, const char*shaderCode, GLenum shaderType)
   GLint codeLength[1];
   codeLength[0] = strlen(shaderCode);
 
+  // Add the source code to the shader
   glShaderSource(theShader, 1, theCode, codeLength);
+  // Compile the shader
   glCompileShader(theShader);
 
   GLint result = 0;
   GLchar eLog[1024] = { 0 };
 
+  // Check error
   glGetShaderiv(theShader, GL_COMPILE_STATUS, &result);
 
   if (!result) {
     glGetShaderInfoLog(theShader, sizeof(eLog), NULL, eLog);
-    fprintf(stderr, "Error compiling the %s shader: '%s'\n", (shaderType==GL_VERTEX_SHADER?"vertex":"fragment"), eLog);
+    std::cout << "Error compiling the " << (shaderType == GL_VERTEX_SHADER ? "vertex" : "fragment") 
+      << "shader: " << eLog << std::endl;
     return;
   }
-
+  // Attach the shader
   glAttachShader(theProgram, theShader);
 }
 
@@ -82,12 +96,12 @@ GLuint GLShader::GetViewLocation()
   return uniView;
 }
 
-GLuint GLShader::GetAmbientColourLocation()
+GLuint GLShader::GetAmbColourLocation()
 {
   return uniAmbColour;
 }
 
-GLuint GLShader::GetAmbientIntensityLocation()
+GLuint GLShader::GetAmbIntensityLocation()
 {
   return uniAmbIntesity;
 }
@@ -97,7 +111,7 @@ GLuint GLShader::GetDiffuseIntensityLocation()
   return uniDirLightDiffuseIntensity;
 }
 
-GLuint GLShader::GetDirectionLocation()
+GLuint GLShader::GetDirLightLocation()
 {
   return uniDirLightDirection;
 }
@@ -117,7 +131,7 @@ void GLShader::Compile(const char* vShader, const char *fShader)
   shaderID = glCreateProgram();
 
   if (!shaderID) {
-    fprintf(stderr, "Error creating shader program!\n");
+    std::cout << "Error creating shader program!\n";
     return;
   }
 
@@ -131,7 +145,7 @@ void GLShader::Compile(const char* vShader, const char *fShader)
   glGetProgramiv(shaderID, GL_LINK_STATUS, &result);
   if (!result) {
     glGetProgramInfoLog(shaderID, sizeof(eLog), NULL, eLog);
-    fprintf(stderr, "Error linking program: '%s'\n", eLog);
+    std::cout << "Error linking program: " << eLog << std::endl;
     return;
   }
 
@@ -139,7 +153,7 @@ void GLShader::Compile(const char* vShader, const char *fShader)
   glGetProgramiv(shaderID, GL_VALIDATE_STATUS, &result);
   if (!result) {
     glGetProgramInfoLog(shaderID, sizeof(eLog), NULL, eLog);
-    fprintf(stderr, "Error validating program: '%s'\n", eLog);
+    std::cout << "Error validating program: " << eLog << std::endl;
     return;
   }
 
@@ -151,6 +165,7 @@ void GLShader::Compile(const char* vShader, const char *fShader)
   uniDirLightDirection = glGetUniformLocation(shaderID, "dirLight.direction");
   uniDirLightDiffuseIntensity = glGetUniformLocation(shaderID, "dirLight.diffuse");
   uniVertexColourFrac = glGetUniformLocation(shaderID, "vColourFrac");
+  uniTextColour = glGetUniformLocation(shaderID, "textColor");
 }
 
 void GLShader::Use()

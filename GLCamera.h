@@ -9,11 +9,7 @@ class GLCamera
 {
 public:
   GLCamera();
-  GLCamera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, 
-    GLfloat startMoveSpeed, GLfloat startTurnSpeed);
-
-  void keyControl(char key);
-  void mouseControl(GLfloat xChange, GLfloat yChange);
+  GLCamera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch);
 
   glm::mat4 calculateViewMatrix();
 
@@ -29,9 +25,6 @@ private:
   GLfloat yaw; // left or right
   GLfloat pitch; // up or down
   GLfloat roll; // rotate left or right
-
-  GLfloat moveSpeed;
-  GLfloat turnSpeed;
 
   void update();
 };

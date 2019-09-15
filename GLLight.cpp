@@ -1,3 +1,11 @@
+// GLLight.cpp : Light class
+//
+// Author: Jungho Park (jhpark16@gmail.com)
+// Date: August 2017
+// Description: Light class containing ambient and directional light.
+//
+/////////////////////////////////////////////////////////////////////////////
+
 #include "stdafx.h"
 #include "GLLight.h"
 
