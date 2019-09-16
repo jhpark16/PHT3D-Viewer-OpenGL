@@ -1,7 +1,8 @@
 # Folders
 Backup/
 [Dd]ebug/
-Debug/
+!Debug/fonts/
+!Debug/Shaders/
 ![Rr]elease/PHT3D_Viewer_3D.exe
 !*.lib
 Example3/
