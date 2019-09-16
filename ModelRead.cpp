@@ -1627,15 +1627,15 @@ int OpenModel(PHT3D_Model& mPHT3DM, CString sSelectedFile)
       mt3dms.BTN_HTOP.resize(boost::extents[mt3dms.BTN_NROW][mt3dms.BTN_NCOL]);
       mt3dms.BTN_DZ.resize(boost::extents[mt3dms.BTN_NLAY][mt3dms.BTN_NROW][mt3dms.BTN_NCOL]);
       //mt3dms.BTN_DZ.resize(mt3dms.BTN_NLAY);
-      for (int k = 0; k < mt3dms.BTN_NLAY; k++)
-      {
         //mt3dms.BTN_DZ[k].Resize(mt3dms.BTN_NROW,mt3dms.BTN_NCOL);
-        for (int j = 0; j < mt3dms.BTN_NROW; j++)
+      for (int j = 0; j < mt3dms.BTN_NROW; j++)
+      {
+        //mt3dms.BTN_HTOP[j]=mf.DIS_TOP[j];
+        for (int i = 0; i < mt3dms.BTN_NCOL; i++)
         {
-          //mt3dms.BTN_HTOP[j]=mf.DIS_TOP[j];
-          for (int i = 0; i < mt3dms.BTN_NCOL; i++)
+          mt3dms.BTN_HTOP[j][i] = mf.DIS_TOP[j][i];
+          for (int k = 0; k < mt3dms.BTN_NLAY; k++)
           {
-            mt3dms.BTN_HTOP[j][i] = mf.DIS_TOP[j][i];
             if (k == 0)
               mt3dms.BTN_DZ[k][j][i] = mf.DIS_TOP[j][i] - mf.DIS_BOTMS[k][j][i];
             else

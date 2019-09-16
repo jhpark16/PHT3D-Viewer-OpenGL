@@ -181,42 +181,43 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
   // at each node using interpolation of heights
   mPHT3DM.Zmin = 1e20;
   mPHT3DM.Zmax = -1e20;
-  CPPMatrix2<double>& elevation = mf.DIS_TOP;
+  CPPMatrix2<double> *elevation = &(mf.DIS_TOP);
   for (int k = 0; k < nLay; k++) {
     // Takes care of four corners
-    if (k < nLay - 1) {
-      // The bottom elevation is used for most layers
-      elevation = mf.DIS_BOTMS[k];
+    if (k == 0) {
+      // The elevation of the top layer is from the DIS_TOP
+      elevation = &(mf.DIS_TOP);
     }
     else {
-      // The elevation of the top layer is from the DIS_TOP
-      elevation = mf.DIS_TOP;
+      // The bottom elevation is used for most layers
+      elevation = &(mf.DIS_BOTMS[k-1]);
     }
     // The elevation varies and interpolation is needed for vertex data
-    zLoc[k*nRow*nCol + 0 * nCol + 0] = elevation[0][0];
-    zLoc[k*nRow*nCol + 0 * nCol + (nCol - 1)] = elevation[0][nCol - 2];
-    zLoc[k*nRow*nCol + (nRow - 1) * nCol + 0] = elevation[nRow - 2][0];
-    zLoc[k*nRow*nCol + (nRow - 1) * nCol + (nCol - 1)] = elevation[nRow - 2][nCol - 2];
+    // Four corner
+    zLoc[k*nRow*nCol + 0 * nCol + 0] = (*elevation)[0][0];
+    zLoc[k*nRow*nCol + 0 * nCol + (nCol - 1)] = (*elevation)[0][nCol - 2];
+    zLoc[k*nRow*nCol + (nRow - 1) * nCol + 0] = (*elevation)[nRow - 2][0];
+    zLoc[k*nRow*nCol + (nRow - 1) * nCol + (nCol - 1)] = (*elevation)[nRow - 2][nCol - 2];
     // Interpolate edges along X direction 
     for (int i = 1; i < nCol - 1; i++) {
-      zLoc[k*nRow*nCol + 0 * nCol + i] = (elevation[0][i - 1] +
-        elevation[0][i]) / 2.0;
-      zLoc[k*nRow*nCol + (nRow - 1)*nCol + i] = (elevation[nRow - 2][i - 1] +
-        elevation[nRow - 2][i]) / 2.0;
+      zLoc[k*nRow*nCol + 0 * nCol + i] = ((*elevation)[0][i - 1] +
+        (*elevation)[0][i]) / 2.0;
+      zLoc[k*nRow*nCol + (nRow - 1)*nCol + i] = ((*elevation)[nRow - 2][i - 1] +
+        (*elevation)[nRow - 2][i]) / 2.0;
     }
     // Interpolate edges along Y direction 
     for (int j = 1; j < nRow - 1; j++) {
-      zLoc[k*nRow*nCol + (j * nCol) + 0] = (elevation[j - 1][0] +
-        elevation[j][0]) / 2.0;
-      zLoc[k*nRow*nCol + (j * nCol) + nCol - 1] = (elevation[j - 1][nCol - 2] +
-        elevation[j][nCol - 2]) / 2.0;
+      zLoc[k*nRow*nCol + (j * nCol) + 0] = ((*elevation)[j - 1][0] +
+        (*elevation)[j][0]) / 2.0;
+      zLoc[k*nRow*nCol + (j * nCol) + nCol - 1] = ((*elevation)[j - 1][nCol - 2] +
+        (*elevation)[j][nCol - 2]) / 2.0;
     }
     // Interpolate the remaining part of the 3D model
     for (int j = 1; j < nRow - 1; j++) {
       for (int i = 1; i < nCol - 1; i++) {
-        zLoc[k*nRow*nCol + (j * nCol) + i] = (elevation[j - 1][i - 1] +
-          elevation[j][i - 1] + elevation[j - 1][i] +
-          elevation[j][i]) / 4.0;
+        zLoc[k*nRow*nCol + (j * nCol) + i] = ((*elevation)[j - 1][i - 1] +
+          (*elevation)[j][i - 1] + (*elevation)[j - 1][i] +
+          (*elevation)[j][i]) / 4.0;
       }
     }
     // Set the X, Y, Z of all nodal points
@@ -274,8 +275,8 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
   vertices = new GLfloat[nVertices];
   int numCells = 0;
   for (int k = 0; k < nLay - 1; k++) {
-    for (int j = 0; j < nRow - 1; j++) {
-      for (int i = 0; i < nCol - 1; i++) {
+    for (int j = 0; j < nRow - 2; j++) {
+      for (int i = 0; i < nCol - 2; i++) {
         if (mf.BAS_IBOUND[k][j][i]) {
           connectivity[9 * numCells + 0] = 8;
           connectivity[9 * numCells + 1] = (k)*(nRow*nCol) + (j)*nCol + (i);  //7
@@ -318,7 +319,10 @@ void CView::Get_PHT3D_Model(unsigned int *&indices, unsigned int &nIndices, GLfl
               locations[in2 + 2] - locations[in0 + 2]);
             glm::vec3 normal = glm::cross(v1, v2);
             normal = glm::normalize(normal);
-
+            if (isnan(normal.x) || isnan(normal.y) || isnan(normal.z)||
+              isinf(normal.x) || isinf(normal.y) || isinf(normal.z)) {
+              normal.x = 1.0; normal.y = 1.0; normal.z = 1.0;
+            }
             for (int ii = 0; ii < 4; ii++) {
               int ii5 = connectivity[9 * numCells + 1 + idx[ii]];
               int iVert = (iVertStart + ii) * nVertColumn;
@@ -487,6 +491,7 @@ void CView::OnInit(void)
 {
   glFrontFace(GL_CCW); // Counter clock wise faces are outside faces
   glEnable(GL_CULL_FACE); // Hidden face removal
+  //glDisable(GL_CULL_FACE); 
   glEnable(GL_DEPTH_TEST); // Depth test for hidden face removal
 
   CreateShaders();
@@ -864,32 +869,32 @@ void CView::OnLButtonDblClk(UINT uMsg, CPoint point)
 
 void CView::OnLButtonDown(UINT uMsg, CPoint point)
 {
-  mouseMode |= 1;
+  mouseMode = 1;
 }
 
 void CView::OnLButtonUp(UINT uMsg, CPoint point)
 {
-  mouseMode &= ~1;
+  mouseMode = 0;
 }
 
 void CView::OnMButtonDown(UINT uMsg, CPoint point)
 {
-  mouseMode |= 2;
+  mouseMode = 2;
 }
 
 void CView::OnMButtonUp(UINT uMsg, CPoint point)
 {
-  mouseMode &= ~2;
+  mouseMode = 0;
 }
 
 void CView::OnRButtonDown(UINT uMsg, CPoint point)
 {
-  mouseMode |= 4;
+  mouseMode = 4;
 }
 
 void CView::OnRButtonUp(UINT uMsg, CPoint point)
 {
-  mouseMode &= ~4;
+  mouseMode = 0;
 }
 
 void CView::OnMouseMove(UINT uMsg, CPoint point)
