@@ -44,10 +44,13 @@ std::map<GLchar, Character> Characters;
 std::vector<GLShader> shaderList;
 
 // Main vertex shader
-static const char *vShader1 = "Shaders/shader.vs";
-
+static const char *vShader = "Shaders/shader.vs";
 // Main fragment shader
-static const char *fShader1 = "Shaders/shader.fs";
+static const char *fShader = "Shaders/shader.fs";
+// Text shaders
+static const char *tvShader = "Shaders/text.vs";
+static const char *tfShader = "Shaders/text.fs";
+static const char *fontMain = "Fonts/arial.ttf";
 
 CView::CView()
 {
@@ -58,11 +61,11 @@ void CreateShaders()
 {
   // Shader using ambient light, directional light and vertex colour
   GLShader *shader1 = new GLShader();
-  shader1->CreateFromFiles(vShader1, fShader1);
+  shader1->CreateFromFiles(vShader, fShader);
   shaderList.push_back(*shader1);
   // Shader for text rendering using FreeType
   GLShader *shader2 = new GLShader();
-  shader2->CreateFromFiles("Shaders/text.vs", "Shaders/text.fs");
+  shader2->CreateFromFiles(tvShader, tfShader);
   shaderList.push_back(*shader2);
 }
 
@@ -546,8 +549,12 @@ void CView::OnInit(void)
 
   // Load font as face
   FT_Face face;
-  if (FT_New_Face(ft, "fonts/arial.ttf", 0, &face))
+  if (FT_New_Face(ft, fontMain, 0, &face)) {
+    CString tstr = "Failed to read ";
+    tstr += fontMain;
+    ::MessageBox(NULL, tstr.GetString(), "File Open Error", MB_OK);
     std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
+  }
 
   // Set size to load glyphs as
   FT_Set_Pixel_Sizes(face, 0, 48);

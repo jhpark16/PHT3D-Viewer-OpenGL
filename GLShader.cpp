@@ -39,6 +39,9 @@ std::string GLShader::ReadFile(const char *fileLocation)
   std::ifstream fileStream(fileLocation, std::ios::in);
 
   if (!fileStream.is_open()) {
+    CString tstr = "Failed to read ";
+    tstr += fileLocation;
+    ::MessageBox(NULL,tstr.GetString(),"File Open Error",MB_OK);
     std::cout << "Failed to read " << fileLocation << "!" << std::endl;
     return "";
   }
